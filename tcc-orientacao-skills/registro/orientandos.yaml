@@ -1,11 +1,14 @@
 # Fonte única de verdade sobre quem está sendo orientado.
-# O texto de cada TCC é trazido como submódulo git em alunos/<slug>/
-# (ver scripts/adicionar-orientando.sh). Este arquivo não armazena o texto do TCC.
+# O repositório de cada aluno (código do projeto + documentação) é trazido como submódulo git
+# em alunos/<slug>/ (ver scripts/adicionar-orientando.sh). O texto do TCC fica em
+# alunos/<slug>/<tcc_dir>/, por padrão docs/TCC (ver contrato/estrutura-repo-aluno.md).
+# Este arquivo não armazena o texto do TCC.
 
 - slug: joao-silva
   aluno: João Silva
   repo: seuusuario/tcc-joao-silva      # owner/repo, formato aceito pelo gh
   branch: main
+  tcc_dir: docs/TCC                    # caminho do texto Typst dentro do repo do aluno
   etapa_atual: 04-referencial-teorico
   status: em andamento
   ultima_atualizacao: 2026-09-20

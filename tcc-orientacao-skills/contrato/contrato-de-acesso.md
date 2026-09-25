@@ -7,7 +7,7 @@ Nenhuma skill grava fora do que está autorizado aqui.
 
 | Local | Pode escrever? | Skill autorizada |
 |---|---|---|
-| Texto do TCC (`alunos/<slug>/`, submódulo) | **Nunca** | Nenhuma — sempre somente leitura |
+| Repo do aluno (`alunos/<slug>/`, submódulo): texto do TCC em `docs/TCC/` e código do projeto | **Nunca** | Nenhuma — sempre somente leitura |
 | `registro/acompanhamento/<slug>.md` | Sim | `registrar-solicitacao`, `orientar-etapa`, `revisar-typst`, `registrar-frequencia` |
 | Issues no GitHub do aluno | Sim, **só uma skill** | `sincronizar-issues` — nenhuma outra skill chama `gh issue create/edit/close/comment` |
 | `registro/orientandos.yaml` | Sim | `gerenciar-orientandos` |
@@ -15,6 +15,9 @@ Nenhuma skill grava fora do que está autorizado aqui.
 Toda skill que identifica um problema no texto do aluno registra uma **linha rica** em
 `registro/acompanhamento/<slug>.md` — nunca edita o texto do aluno e nunca cria a issue
 diretamente. Quem transforma isso em issue é sempre a `sincronizar-issues`.
+
+A estrutura esperada do repositório do aluno (código + `docs/TCC/`) está em
+`contrato/estrutura-repo-aluno.md`.
 
 ## Por que um único ponto de escrita no GitHub
 

@@ -20,7 +20,9 @@ Esta skill é chamada em **vários pontos do processo**, não só uma vez no fim
   pulada.
 
 ## Fluxo de trabalho
-1. Resolva o `slug`, garanta que `alunos/<slug>/` está atualizado (`git submodule update`).
+1. Resolva o `slug`, garanta que `alunos/<slug>/` está atualizado (`git submodule update`) e
+   localize o texto em `alunos/<slug>/<tcc_dir>/main.typ` (padrão `docs/TCC/`). Se não estiver
+   lá, siga "Repositório fora do padrão" em `contrato/estrutura-repo-aluno.md`.
 2. Leia `normas/normas-abnt-detalhado.md` — use a seção 9 (checklist automatizável) como roteiro
    de verificação mecânica, e as seções 1–8 para justificar cada apontamento pela norma correta.
 3. Rode as checagens automatizáveis:
@@ -44,6 +46,8 @@ Esta skill é chamada em **vários pontos do processo**, não só uma vez no fim
 ## Regras
 - Nunca reproduza trechos longos do TCC do aluno na resposta — cite só o necessário para
   localizar o problema (poucas palavras).
+- Na coluna Localização, use o caminho relativo à raiz do repo do aluno (ex.:
+  `docs/TCC/main.typ:120`).
 - Se o documento não for encontrado em `alunos/<slug>/`, pergunte ao orientador o caminho ou
   aceite um trecho colado como alternativa — não bloqueie a revisão por isso.
 - Itens de estilo/preferência pessoal do orientador (não normativos) vão no Histórico, não na

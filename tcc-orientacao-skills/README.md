@@ -5,7 +5,8 @@ vários orientandos simultaneamente. Segue o Regimento de TCC do curso e as norm
 (NBR 14724, 6028, 10520, 6023, 6024, 6027).
 
 ## Como funciona, em uma frase
-O texto de cada TCC (Typst) entra como **submódulo git somente leitura** em `alunos/<slug>/`;
+O repositório de cada aluno (código do projeto + documentação, com o texto Typst do TCC em
+`docs/TCC/`) entra como **submódulo git somente leitura** em `alunos/<slug>/`;
 tudo que o orientador registra fica em `registro/acompanhamento/<slug>.md`; e só a skill
 `sincronizar-issues` conversa com o GitHub do aluno para abrir/fechar issues — evitando
 duplicidade e permitindo trabalhar offline.
@@ -14,12 +15,16 @@ duplicidade e permitindo trabalhar offline.
 
 ```
 contrato/contrato-de-acesso.md     # regras de escrita, máquina de estados, labels — leitura obrigatória
+contrato/estrutura-repo-aluno.md   # layout do repo do aluno: código + docs/TCC
 normas/                            # NBR detalhadas + (quando disponível) o Regimento oficial
 etapas/                            # roteiro de cada fase do TCC (concepção → defesa)
 registro/
   orientandos.yaml                 # fonte única de verdade: quem, repo, etapa atual
   acompanhamento/<slug>.md         # histórico + pendências rastreáveis, por aluno
 anexos/                            # formulários oficiais do Regimento (a preencher)
+alunos/<slug>/                     # submódulo: repo do aluno (somente leitura)
+  docs/TCC/                        # texto do TCC (Typst)
+  src/ ...                         # código do projeto
 skills/
   gerenciar-orientandos/           # cadastro e consulta de orientandos
   orientar-etapa/                  # conduz a sessão de orientação da etapa atual
@@ -30,7 +35,7 @@ skills/
   relatorio-acompanhamento/        # visão consolidada de todos os orientandos
   apoio-orientador/                # gera os formulários oficiais
 scripts/
-  adicionar-orientando.sh          # cria submódulo + entrada no registro + acompanhamento
+  adicionar-orientando.sh          # cria submódulo + entrada no registro + acompanhamento (aceita tcc_dir)
   atualizar-orientandos.sh         # git submodule update --remote em todos os alunos
 ```
 

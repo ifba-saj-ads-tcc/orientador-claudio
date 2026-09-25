@@ -9,7 +9,9 @@ Leia `contrato/contrato-de-acesso.md` antes de agir — só esta skill escreve e
 `registro/orientandos.yaml`.
 
 ## Quando usar
-- Novo orientando: rode `scripts/adicionar-orientando.sh <slug> <owner/repo> "<Nome>" [branch]`.
+- Novo orientando: rode `scripts/adicionar-orientando.sh <slug> <owner/repo> "<Nome>" [branch] [tcc_dir]`.
+  O repo do aluno deve seguir `contrato/estrutura-repo-aluno.md` (código + `docs/TCC/`); `tcc_dir`
+  só precisa ser informado se o texto ainda não estiver em `docs/TCC`.
 - Consulta ("quem estou orientando", "que etapa está o João"): leia o YAML e responda direto,
   sem pedir confirmação.
 - Mudança de etapa: atualize o campo `etapa_atual` (use os nomes de arquivo em `etapas/`) e

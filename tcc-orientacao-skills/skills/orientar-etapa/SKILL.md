@@ -14,8 +14,11 @@ TCC nem virada em issue por esta skill (isso é papel exclusivo da `sincronizar-
    `etapa_atual` — ou use a etapa informada explicitamente pelo orientador.
 2. Leia o arquivo correspondente em `etapas/NN-*.md`: objetivo, perguntas orientadoras,
    checklist de conclusão, erros comuns.
-3. Leia o texto relevante em `alunos/<slug>/` (se o submódulo existir) e o acompanhamento em
-   `registro/acompanhamento/<slug>.md`.
+3. Leia o texto do TCC em `alunos/<slug>/<tcc_dir>/` (padrão `docs/TCC/`, ver
+   `contrato/estrutura-repo-aluno.md`) e o acompanhamento em
+   `registro/acompanhamento/<slug>.md`. Nas etapas 05 e 06, leia também o código do projeto no
+   mesmo repositório (fora de `docs/`) para conferir se o que o texto afirma, como tecnologias,
+   arquitetura e funcionalidades, de fato está implementado.
 4. Avalie o material do aluno contra o checklist da etapa. Para cada item não atendido,
    monte uma linha no formato de "Pendências rastreáveis" (ver `contrato/contrato-de-acesso.md`)
    com Estado `pendente`.
