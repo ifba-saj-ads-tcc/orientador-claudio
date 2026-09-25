@@ -1,0 +1,14 @@
+{
+  "alunos": [
+    {
+      "id": "LEANDRO-DA-SILVA-SANTOS",
+      "repo": "ifba-saj-ads-tcc/LEANDRO-DA-SILVA-SANTOS",
+      "branch": "main"
+    },
+    {
+      "id": "PEDRO",
+      "repo": "ifba-saj-ads-tcc/tcc-pedro-hipolito-orientador",
+      "branch": "main"
+    }
+  ]
+}

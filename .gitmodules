@@ -1,0 +1,8 @@
+[submodule "alunos/LEANDRO-DA-SILVA-SANTOS"]
+	path = alunos/LEANDRO-DA-SILVA-SANTOS
+	url = https://github.com/ifba-saj-ads-tcc/LEANDRO-DA-SILVA-SANTOS.git
+	branch = main
+[submodule "alunos/PEDRO"]
+	path = alunos/PEDRO
+	url = https://github.com/ifba-saj-ads-tcc/tcc-pedro-hipolito-orientador.git
+	branch = main

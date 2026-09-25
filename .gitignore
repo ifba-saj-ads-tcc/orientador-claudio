@@ -1,0 +1,3 @@
+# Arquivos temporários — ignorados pelo git, exceto o marcador da pasta
+.temp/*
+!.temp/.gitkeep
