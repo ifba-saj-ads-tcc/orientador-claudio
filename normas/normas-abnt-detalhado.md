@@ -1,6 +1,7 @@
 # Normas ABNT para Trabalhos Acadêmicos — Checklist de Validação
 
-> Base para a skill `revisar-typst`. Cada regra abaixo cita a norma de origem
+> Base para a skill `tcc-50-revisar`. As regras de conteúdo de cada seção ficam em
+> `normas/conteudo-por-secao.md`. Cada regra abaixo cita a norma de origem
 > e, quando possível, é redigida como item de checklist verificável.
 > ⚠️ Sempre que o template Typst do curso ou um manual próprio do IFBA-SAJ
 > divergir daqui, o template/manual institucional prevalece.
@@ -69,7 +70,7 @@
 - [ ] Abstract presente e com o mesmo número de keywords do resumo
 
 > ⚠️ **Quando checar**: assim que o resumo existir no texto — normalmente logo após a conclusão
-> (ver `etapas/07-conclusao.md`) — e não apenas na revisão final pré-defesa. Resumo/abstract com
+> (ver `etapas/08-consideracoes-finais.md`) — e não apenas na revisão final pré-defesa. Resumo/abstract com
 > problema é rápido de corrigir, mas só se sobrar tempo; descoberto em cima da defesa, vira
 > pressa e piora a qualidade.
 
@@ -134,7 +135,8 @@ de TCC do ADS/IFBA-SAJ cobra) seguir a lógica IMRaD adaptada:
 
 Introdução → Referencial Teórico (Fundamentação) → Metodologia → Resultados/Discussão → Conclusão
 
-Isso já está refletido nos arquivos de `etapas/04` a `etapas/07` deste repositório.
+Isso está refletido nos arquivos de `etapas/04` a `etapas/08` e na estrutura recomendada de
+`normas/conteudo-por-secao.md`.
 
 **Checklist**
 - [ ] Desenvolvimento segue a sequência lógica Metodologia → Resultados → Discussão
@@ -142,11 +144,11 @@ Isso já está refletido nos arquivos de `etapas/04` a `etapas/07` deste reposit
 
 ---
 
-## Resumo executivo para a skill `revisar-typst`
+## Resumo executivo para a skill `tcc-50-revisar`
 
 Regras que dá para checar **automaticamente** (contagem, regex, estrutura):
-1. Contagem de palavras do resumo (150–500) + estrutura IMRaD — **checar na etapa 07
-   (Conclusão), assim que o resumo existir, não na revisão final**
+1. Contagem de palavras do resumo (150–500) + estrutura IMRaD — **checar na etapa 08
+   (Considerações finais), assim que o resumo existir, não na revisão final**
 2. Resumo em parágrafo único, sem citações
 3. 3–6 palavras-chave separadas por `;`
 4. Toda citação `(AUTOR, ano)` tem referência correspondente (e vice-versa)
@@ -154,7 +156,7 @@ Regras que dá para checar **automaticamente** (contagem, regex, estrutura):
 6. Sumário bate com os títulos reais
 7. Referências em ordem alfabética
 
-Regras que exigem **leitura crítica humana** (o orientador, apoiado pela skill `orientar-etapa`):
+Regras que exigem **leitura crítica humana** (o orientador, apoiado pela skill `tcc-20-orientar`):
 - Coerência entre objetivos, metodologia, resultados e conclusão
 - Qualidade da discussão teórica (não é só formatação)
 - Adequação do tipo de citação (direta vs. indireta) ao contexto

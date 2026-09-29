@@ -1,7 +1,7 @@
 # Fluxo de uso das skills
 
-> **Proposta em revisão.** Os nomes `tcc-NN-*` e as etapas 00 a 09 abaixo ainda não foram
-> aplicados às pastas `skills/` e `etapas/`.
+> Versão HTML, com os diagramas desenhados: [`fluxo-de-uso.html`](fluxo-de-uso.html). Regras de
+> cada seção: [`normas/conteudo-por-secao.md`](../normas/conteudo-por-secao.md).
 
 O orientador aceita o aluno e, a partir daí, repete o mesmo ciclo em cada etapa do TCC até a
 defesa. Em todas as etapas, de 00 a 09, a `tcc-20-orientar` conduz a sessão e a
@@ -117,7 +117,7 @@ flowchart TD
 
 ## As skills, na ordem em que aparecem
 
-| Nome novo | Nome atual | Onde entra no ciclo |
+| Skill | Nome anterior | Onde entra no ciclo |
 |---|---|---|
 | `tcc-10-cadastrar` | `gerenciar-orientandos` | Só o cadastro: aceitar o orientando e encerrar a orientação |
 | `tcc-20-orientar` | `orientar-etapa` | Toda sessão de orientação, de 00 a 09, com os passos 20.1 a 20.7. Revisa sempre com a `tcc-50-revisar` e muda a etapa depois da confirmação do orientador. Estruturar tópicos e sugerir referências (novos) fazem parte do passo 20.3 |
@@ -130,7 +130,8 @@ flowchart TD
 
 ## Estrutura recomendada do TCC
 
-É a referência da revisão (passo 20.2). A `tcc-50-revisar` confere se cada seção existe, está
+É a referência da revisão (passo 20.2); os códigos de cada regra estão em
+[`normas/conteudo-por-secao.md`](../normas/conteudo-por-secao.md). A `tcc-50-revisar` confere se cada seção existe, está
 nesta ordem e tem o conteúdo certo.
 
 | Seção | Regra que a revisão confere | Etapa |

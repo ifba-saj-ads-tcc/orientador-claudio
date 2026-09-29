@@ -21,8 +21,8 @@ somente leitura, em `alunos/<slug>/`.
 ```
 
 Regras:
-- O texto do TCC fica **sempre** em `docs/TCC/`. Skills que leem o texto (`revisar-typst`,
-  `orientar-etapa`) procuram ali o `main.typ`.
+- O texto do TCC fica **sempre** em `docs/TCC/`. Skills que leem o texto (`tcc-50-revisar`,
+  `tcc-20-orientar`) procuram ali o `main.typ`.
 - O código do projeto fica **fora** de `docs/`. A organização interna é livre, mas deve estar
   descrita no `README.md` do aluno.
 - O caminho do texto é registrado em `registro/orientandos.yaml`, no campo `tcc_dir`
@@ -33,8 +33,8 @@ Regras:
 
 | Parte do repo do aluno | Uso pelas skills |
 |---|---|
-| `docs/TCC/` | Revisão ABNT e de conteúdo por etapa (`revisar-typst`, `orientar-etapa`) |
-| Código (`src/` etc.) | Evidência na etapa 06: conferir se o que o texto afirma está implementado (`orientar-etapa`) |
+| `docs/TCC/` | Revisão ABNT e de conteúdo por etapa (`tcc-50-revisar`, `tcc-20-orientar`) |
+| Código (`src/` etc.) | Evidência na etapa 06: conferir se o que o texto afirma está implementado (`tcc-20-orientar`, `tcc-50-revisar`, regra DES-07) |
 | `README.md` e demais `docs/` | Contexto do projeto: como rodar, arquitetura |
 
 Tudo é **somente leitura** (ver `contrato/contrato-de-acesso.md`). Um problema encontrado no

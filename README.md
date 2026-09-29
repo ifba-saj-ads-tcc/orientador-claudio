@@ -8,34 +8,57 @@ vários orientandos simultaneamente. Segue o Regimento de TCC do curso e as norm
 O repositório de cada aluno (código do projeto + documentação, com o texto Typst do TCC em
 `docs/TCC/`) entra como **submódulo git somente leitura** em `alunos/<slug>/`;
 tudo que o orientador registra fica em `registro/acompanhamento/<slug>.md`; e só a skill
-`sincronizar-issues` conversa com o GitHub do aluno para abrir/fechar issues — evitando
+`tcc-60-sincronizar` conversa com o GitHub do aluno para abrir/fechar issues — evitando
 duplicidade e permitindo trabalhar offline.
 
-Veja o fluxo de uso das skills, com diagramas, em [`docs/fluxo-de-uso.md`](docs/fluxo-de-uso.md).
+## Fluxo de uso
+
+O aluno é aceito (`tcc-10-cadastrar`) e passa por um ciclo que se repete em cada etapa, de
+00 Concepção a 08 Considerações finais, até a 09 Defesa. Toda sessão é conduzida pela
+`tcc-20-orientar` em 7 passos, e a `tcc-50-revisar` revisa em todas elas. Mudar de etapa é
+sempre decisão do orientador.
+
+Diagramas e tabelas completas:
+- [`docs/fluxo-de-uso.md`](docs/fluxo-de-uso.md) — versão Markdown, com diagramas Mermaid
+- [`docs/fluxo-de-uso.html`](docs/fluxo-de-uso.html) — versão HTML, com os diagramas desenhados
+  (abra o arquivo no navegador)
+
+| Skill | Papel |
+|---|---|
+| `tcc-10-cadastrar` | Aceitar o orientando e encerrar a orientação |
+| `tcc-20-orientar` | Toda sessão de orientação: passos 20.1 a 20.7 |
+| `tcc-30-frequencia` | Registrar cada encontro (Anexo VII) |
+| `tcc-40-solicitar` | Pedido avulso do orientador ao aluno |
+| `tcc-50-revisar` | Revisão de estrutura, conteúdo por seção e ABNT, em toda sessão |
+| `tcc-60-sincronizar` | Única ponte com as issues do GitHub do aluno |
+| `tcc-70-relatorio` | Situação de todos os orientandos |
+| `tcc-80-formularios` | Formulários oficiais do Regimento |
 
 ## Estrutura
 
 ```
 contrato/contrato-de-acesso.md     # regras de escrita, máquina de estados, labels — leitura obrigatória
 contrato/estrutura-repo-aluno.md   # layout do repo do aluno: código + docs/TCC
-normas/                            # NBR detalhadas + (quando disponível) o Regimento oficial
-etapas/                            # roteiro de cada fase do TCC (concepção → defesa)
+normas/conteudo-por-secao.md       # estrutura recomendada e regras DEVE / NÃO DEVE de cada seção
+normas/normas-abnt-detalhado.md    # checklist das NBR
+etapas/                            # roteiros das etapas 00 Concepção a 09 Defesa
+docs/fluxo-de-uso.md|.html         # fluxo de uso das skills, com diagramas
 registro/
   orientandos.yaml                 # fonte única de verdade: quem, repo, etapa atual
-  acompanhamento/<slug>.md         # histórico + pendências rastreáveis, por aluno
+  acompanhamento/<slug>.md         # histórico, pendências rastreáveis e leituras, por aluno
 anexos/                            # formulários oficiais do Regimento (a preencher)
 alunos/<slug>/                     # submódulo: repo do aluno (somente leitura)
   docs/TCC/                        # texto do TCC (Typst)
   src/ ...                         # código do projeto
 skills/
-  gerenciar-orientandos/           # cadastro e consulta de orientandos
-  orientar-etapa/                  # conduz a sessão de orientação da etapa atual
-  registrar-solicitacao/           # registra pedido do orientador ao aluno
-  registrar-frequencia/            # log de horas de orientação (Anexo VII do Regimento)
-  revisar-typst/                   # checagem ABNT + conteúdo da etapa
-  sincronizar-issues/              # única skill que fala com o GitHub (gate)
-  relatorio-acompanhamento/        # visão consolidada de todos os orientandos
-  apoio-orientador/                # gera os formulários oficiais
+  tcc-10-cadastrar/                # aceitar e encerrar orientandos
+  tcc-20-orientar/                 # sessão de orientação em 7 passos, qualquer etapa
+  tcc-30-frequencia/               # log de horas de orientação (Anexo VII do Regimento)
+  tcc-40-solicitar/                # registra pedido avulso do orientador ao aluno
+  tcc-50-revisar/                  # estrutura + conteúdo por seção + ABNT
+  tcc-60-sincronizar/              # única skill que fala com o GitHub (gate)
+  tcc-70-relatorio/                # visão consolidada de todos os orientandos
+  tcc-80-formularios/              # formulários oficiais
 scripts/
   adicionar-orientando.sh          # cria submódulo + entrada no registro + acompanhamento (aceita tcc_dir)
   atualizar-orientandos.sh         # git submodule update --remote em todos os alunos

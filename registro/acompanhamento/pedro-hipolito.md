@@ -3,7 +3,7 @@
 > **Migrado em 2026-09-29** do repositório antigo (`acompanhamento/PEDRO.md`). O conteúdo abaixo
 > foi preservado como estava: referências a `alunos/PEDRO/`, skills `tcc-*`/`tcc-00` e
 > `.opencode/` são históricas. Hoje o submódulo fica em `alunos/pedro-hipolito/` e a sincronização com o
-> GitHub é feita pela skill `sincronizar-issues` (ver `contrato/contrato-de-acesso.md`).
+> GitHub é feita pela skill `tcc-60-sincronizar` (ver `contrato/contrato-de-acesso.md`).
 
 > **Material de trabalho (não normativo).**
 > Deve ser **REMOVIDO/EXCLUÍDO do material entregue** antes da entrega/defesa.

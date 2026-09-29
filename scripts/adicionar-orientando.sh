@@ -23,7 +23,7 @@ cat >> registro/orientandos.yaml << EOY
   repo: ${REPO}
   branch: ${BRANCH}
   tcc_dir: ${TCC_DIR}
-  etapa_atual: 00-pre-projeto-concepcao
+  etapa_atual: 00-concepcao
   status: em andamento
   ultima_atualizacao: $(date +%F)
 EOY
