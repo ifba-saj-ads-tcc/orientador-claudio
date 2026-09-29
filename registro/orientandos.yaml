@@ -1,0 +1,33 @@
+# Fonte única de verdade sobre quem está sendo orientado.
+# O repositório de cada aluno (código do projeto + documentação) é trazido como submódulo git
+# em alunos/<slug>/ (ver scripts/adicionar-orientando.sh). O texto do TCC fica em
+# alunos/<slug>/<tcc_dir>/, por padrão docs/TCC (ver contrato/estrutura-repo-aluno.md).
+# Este arquivo não armazena o texto do TCC.
+#
+# Formato de uma entrada:
+# - slug: joao-silva
+#   aluno: João Silva
+#   repo: seuusuario/tcc-joao-silva      # owner/repo, formato aceito pelo gh
+#   branch: main
+#   tcc_dir: docs/TCC                    # caminho do texto Typst dentro do repo do aluno
+#   etapa_atual: 04-referencial-teorico  # nome de arquivo em etapas/, sem .md
+#   status: em andamento
+#   ultima_atualizacao: 2026-09-20
+
+- slug: leandro-da-silva-santos
+  aluno: Leandro da Silva Santos
+  repo: ifba-saj-ads-tcc/LEANDRO-DA-SILVA-SANTOS
+  branch: main
+  tcc_dir: .                           # texto ainda na raiz do repo; migrar para docs/TCC
+  etapa_atual: 04-referencial-teorico
+  status: em andamento
+  ultima_atualizacao: 2026-08-28
+
+- slug: pedro-hipolito
+  aluno: Pedro Victor Hipólito Cabral
+  repo: ifba-saj-ads-tcc/tcc-pedro-hipolito-orientador
+  branch: main
+  tcc_dir: .                           # texto ainda na raiz do repo; migrar para docs/TCC
+  etapa_atual: 08-preparacao-defesa
+  status: em andamento
+  ultima_atualizacao: 2026-09-08
