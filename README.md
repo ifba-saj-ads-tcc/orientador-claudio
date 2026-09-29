@@ -11,6 +11,8 @@ tudo que o orientador registra fica em `registro/acompanhamento/<slug>.md`; e sÃ
 `sincronizar-issues` conversa com o GitHub do aluno para abrir/fechar issues â€” evitando
 duplicidade e permitindo trabalhar offline.
 
+Veja o fluxo de uso das skills, com diagramas, em [`docs/fluxo-de-uso.md`](docs/fluxo-de-uso.md).
+
 ## Estrutura
 
 ```
