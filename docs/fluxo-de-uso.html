@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ciclo de Orientação TCC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: uma coluna de leitura; o fluxograma é a peça central, com rolagem lateral própria no celular. */
+:root {
+  --bg: #f4f7f4;
+  --surface: #ffffff;
+  --band: #e7eee8;
+  --fg: #17211a;
+  --muted: #56645a;
+  --line: #7f8e84;
+  --accent: #1d7440;
+  --accent-soft: #d6ecdd;
+  --font-display: "Literata", Georgia, "Times New Roman", serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101512; --surface: #18201b; --band: #1c2620; --fg: #e3ebe5; --muted: #9eaca2;
+    --line: #748479; --accent: #62c98a; --accent-soft: #1d3a28; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101512; --surface: #18201b; --band: #1c2620; --fg: #e3ebe5; --muted: #9eaca2;
+  --line: #748479; --accent: #62c98a; --accent-soft: #1d3a28; color-scheme: dark;
+}
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 36px; }
+header { display: grid; gap: 10px; max-width: 68ch; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+h1 { font-family: var(--font-display); font-weight: 650; font-size: clamp(28px, 4.4vw, 40px); line-height: 1.15; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-weight: 650; font-size: 22px; margin: 0 0 12px; text-wrap: balance; }
+p { margin: 0; }
+.lead { color: var(--muted); font-size: 17px; }
+code, .mono { font-family: var(--font-mono); font-size: .88em; }
+
+figure { margin: 0; display: grid; gap: 14px; }
+.scroll { overflow-x: auto; border-radius: 12px; background: var(--surface); padding: 12px; }
+.flow { display: block; width: 100%; min-width: 760px; height: auto; color: var(--line); }
+.flow .band { fill: var(--band); }
+.flow .band.any { fill: none; stroke: var(--line); stroke-dasharray: 4 4; }
+.flow .bl { fill: var(--muted); font: 700 11.5px var(--font-body); letter-spacing: .06em; text-transform: uppercase; }
+.flow .node rect, .flow .node polygon { fill: var(--surface); stroke: var(--line); stroke-width: 1.2; }
+.flow .node.new rect:first-child { stroke: var(--accent); stroke-width: 2; }
+.flow .node.student rect { stroke-dasharray: 5 4; fill: none; }
+.flow .node.dec polygon { stroke: var(--fg); }
+.flow .node.rev rect { stroke: var(--fg); stroke-width: 2; }
+.flow .node.t20 rect:first-child { stroke: var(--accent); stroke-width: 2; }
+.flow .node.t20.rev rect:first-child { stroke: var(--accent); stroke-width: 3; }
+.flow .node.t20 .s { fill: var(--accent); }
+.flow .node.t20.student rect:first-child { stroke-dasharray: 5 4; }
+.flow .grp20 { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 6 4; }
+.flow .dot { fill: var(--line); }
+.flow .grp20.solid { fill: var(--band); stroke-dasharray: none; }
+.flow .g20l { fill: var(--accent); font: 700 11.5px var(--font-body); letter-spacing: .04em; }
+.flow .node.sub rect { fill: var(--band); stroke: none; }
+.flow .node.sub.new rect { stroke: var(--accent); stroke-width: 1.6; }
+.flow .node.pill rect { fill: var(--surface); }
+.flow .t { fill: var(--fg); font: 700 13px var(--font-body); }
+.flow .s { fill: var(--fg); font: 500 11px var(--font-mono); }
+.flow .node.new .s { fill: var(--accent); }
+.flow .x { fill: var(--muted); font: 400 11px var(--font-body); }
+.flow .node rect.tag { fill: var(--accent); stroke: none; }
+.flow .tagt { fill: var(--surface); font: 700 10px var(--font-body); letter-spacing: .05em; text-transform: uppercase; }
+.flow .edge { fill: none; stroke: currentColor; stroke-width: 1.4; }
+.flow .el { fill: var(--muted); font: 400 11px var(--font-body); font-style: italic; }
+.flow .seg { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+.flow .seg.loop { fill: var(--band); }
+.flow .segframe { fill: none; stroke: var(--line); stroke-width: 1.2; }
+.flow .sn { fill: var(--fg); font: 500 12px var(--font-mono); }
+.flow .sx { fill: var(--fg); font: 400 10px var(--font-body); }
+.flow .br { fill: none; stroke: var(--fg); stroke-width: 1.2; }
+.flow .bt { fill: var(--muted); font: 400 11.5px var(--font-body); }
+figcaption { color: var(--muted); font-size: 14px; max-width: 72ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 26px; height: 16px; border-radius: 4px; border: 1.4px solid var(--line); background: var(--surface); }
+.sw.student { border-style: dashed; background: transparent; }
+.sw.new { border: 2px solid var(--accent); }
+.sw.rev { border: 2px solid var(--fg); }
+.sw.t20 { border: 2px solid var(--accent); }
+.sw.dec { width: 16px; height: 16px; transform: rotate(45deg) scale(.8); border-color: var(--fg); border-radius: 1px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.tbl { overflow-x: auto; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--band); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+td:first-child { white-space: nowrap; font-family: var(--font-mono); font-size: 13.5px; }
+td.old { color: var(--muted); }
+.new-pill { display: inline-block; font: 700 10.5px var(--font-body); letter-spacing: .05em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent); border-radius: 99px; padding: 2px 8px; }
+
+.notes { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.notes section { min-width: 0; display: grid; gap: 8px; align-content: start; }
+.notes h3 { margin: 0; font-size: 16px; }
+.notes p { color: var(--muted); max-width: 60ch; }
+.outline { display: grid; gap: 12px; max-width: 76ch; }
+.outline .ch { background: var(--surface); border-radius: 10px; padding: 12px 16px; }
+.outline .et { font-size: 12.5px; color: var(--muted); margin-left: 8px; }
+.outline .ch.pend { background: transparent; border: 1.4px dashed var(--line); }
+.outline ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; }
+.outline li .mono { color: var(--muted); margin-right: 6px; }
+.outline em { display: block; color: var(--accent); font-style: normal; font-size: 14px; margin-left: 38px; }
+.outline .pend em { display: inline; margin-left: 6px; color: var(--muted); }
+ol.q { margin: 0; padding-left: 22px; display: grid; gap: 8px; max-width: 72ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">tcc-orientacao-skills · fluxo de uso</div>
+    <h1>Ciclo de orientação do TCC</h1>
+    <p class="lead">Uma volta completa: o orientador acolhe o aluno, transforma a proposta inicial em um TCC com estrutura e leituras, e depois repete o mesmo ciclo em cada etapa até a defesa. Cada caixa diz qual skill faz o trabalho.</p>
+  </header>
+
+  <figure>
+    <div class="scroll"><svg class="flow" viewBox="0 0 920 1082" role="img" aria-label="Etapas 00 a 09 do TCC e fluxo das skills: acolhida do orientando, ciclo repetido por etapa com reunião, revisão, issues e retorno do aluno, e por fim defesa e encerramento."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<text class="bl" x="24" y="30">Etapas do TCC · roteiros em etapas/</text>
+<rect class="seg loop" x="50.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="91.5" y="62" text-anchor="middle">00</text>
+<text class="sx" x="91.5" y="80" text-anchor="middle">Concepção</text>
+<rect class="seg loop" x="133.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="174.5" y="62" text-anchor="middle">01</text>
+<text class="sx" x="174.5" y="80" text-anchor="middle">Problema</text>
+<rect class="seg loop" x="216.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="257.5" y="62" text-anchor="middle">02</text>
+<text class="sx" x="257.5" y="80" text-anchor="middle">Hipótese</text>
+<rect class="seg loop" x="299.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="340.5" y="62" text-anchor="middle">03</text>
+<text class="sx" x="340.5" y="80" text-anchor="middle">Objetivos</text>
+<rect class="seg loop" x="382.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="423.5" y="62" text-anchor="middle">04</text>
+<text class="sx" x="423.5" y="80" text-anchor="middle">Referencial</text>
+<rect class="seg loop" x="465.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="506.5" y="62" text-anchor="middle">05</text>
+<text class="sx" x="506.5" y="80" text-anchor="middle">Metodologia</text>
+<rect class="seg loop" x="548.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="589.5" y="62" text-anchor="middle">06</text>
+<text class="sx" x="589.5" y="80" text-anchor="middle">Desenvolvimento</text>
+<rect class="seg loop" x="631.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="672.5" y="62" text-anchor="middle">07</text>
+<text class="sx" x="672.5" y="80" text-anchor="middle">Resultados</text>
+<rect class="seg loop" x="714.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="755.5" y="62" text-anchor="middle">08</text>
+<text class="sx" x="755.5" y="80" text-anchor="middle">Considerações</text>
+<rect class="seg" x="797.0" y="42" width="83.0" height="50"/>
+<text class="sn" x="838.5" y="62" text-anchor="middle">09</text>
+<text class="sx" x="838.5" y="80" text-anchor="middle">Defesa</text>
+<rect class="segframe" x="50" y="42" width="830" height="50" rx="6"/>
+<path class="br" d="M54.0 100 v6 H793.0 v-6"/>
+<text class="bt" x="423.5" y="122" text-anchor="middle">bloco B, uma ou mais voltas por etapa: 00 → 01 → … → 08</text>
+<path class="br" d="M801.0 100 v6 H876.0 v-6"/>
+<text class="bt" x="838.5" y="122" text-anchor="middle">bloco C</text>
+<g class="node rev"><rect x="50" y="138" width="830" height="30" rx="15"/></g>
+<text x="465" y="158" text-anchor="middle"><tspan class="x">Em todas as etapas, de 00 a 09: </tspan><tspan class="s">tcc-20-orientar</tspan><tspan class="x"> conduz a sessão e </tspan><tspan class="s">tcc-50-revisar</tspan><tspan class="x"> sempre revisa</tspan></text>
+<g transform="translate(0,186)">
+<rect class="band" x="8" y="14" width="904" height="156" rx="10"/>
+<text class="bl" x="24" y="33">A · Entrada, uma vez por orientando</text>
+<rect class="band" x="8" y="196" width="904" height="428" rx="10"/>
+<text class="bl" x="270" y="218">B · Ciclo que se repete em cada etapa, da 00 à 08</text>
+<rect class="band" x="8" y="640" width="904" height="148" rx="10"/>
+<text class="bl" x="270" y="662">C · Defesa e encerramento, etapa 09</text>
+<rect class="band any" x="8" y="804" width="904" height="80" rx="10"/>
+<text class="bl" x="24" y="826">A qualquer momento</text>
+<g class="node ">
+<rect x="50" y="56" width="170" height="98" rx="8"/>
+<text class="t" x="135.0" y="80" text-anchor="middle">Aceitar o</text>
+<text class="t" x="135.0" y="96" text-anchor="middle">orientando</text>
+<text class="s" x="135.0" y="118" text-anchor="middle">tcc-10-cadastrar</text>
+<text class="x" x="135.0" y="133" text-anchor="middle">Carta de Aceite: tcc-80</text>
+</g>
+<text class="x" x="260" y="92">O aluno entra no ciclo pela etapa 00. Nas primeiras voltas, o passo 20.3 da tcc-20-orientar</text>
+<text class="x" x="260" y="110">analisa a proposta inicial, direciona para um TCC, monta a estrutura de tópicos e sugere</text>
+<text class="x" x="260" y="128">referências para aprofundar.</text>
+<path class="edge" d="M135 154 V228" marker-end="url(#ah)"/>
+<text class="el" x="143" y="190" text-anchor="start">começa na etapa 00</text>
+<g class="node t20">
+<rect x="50" y="230" width="170" height="96" rx="8"/>
+<text class="t" x="135.0" y="254" text-anchor="middle">Sessão de orientação</text>
+<text class="s" x="135.0" y="276" text-anchor="middle">tcc-20-orientar</text>
+<text class="x" x="135.0" y="291" text-anchor="middle">passos 20.1 a 20.7</text>
+<text class="x" x="135.0" y="306" text-anchor="middle">revisa com tcc-50</text>
+</g>
+<g class="node ">
+<rect x="270" y="230" width="170" height="96" rx="8"/>
+<text class="t" x="355.0" y="254" text-anchor="middle">Registrar o encontro</text>
+<text class="s" x="355.0" y="276" text-anchor="middle">tcc-30-frequencia</text>
+<text class="x" x="355.0" y="291" text-anchor="middle">data, duração, assunto</text>
+</g>
+<g class="node ">
+<rect x="490" y="230" width="170" height="96" rx="8"/>
+<text class="t" x="575.0" y="254" text-anchor="middle">Publicar pendências</text>
+<text class="s" x="575.0" y="276" text-anchor="middle">tcc-60-sincronizar</text>
+<text class="x" x="575.0" y="291" text-anchor="middle">vira issue no GitHub</text>
+<text class="x" x="575.0" y="306" text-anchor="middle">+ pedidos: tcc-40</text>
+</g>
+<g class="node student">
+<rect x="710" y="230" width="170" height="96" rx="8"/>
+<text class="t" x="795.0" y="254" text-anchor="middle">Aluno escreve</text>
+<text class="t" x="795.0" y="270" text-anchor="middle">e corrige</text>
+<text class="x" x="795.0" y="292" text-anchor="middle">docs/TCC + código</text>
+<text class="x" x="795.0" y="307" text-anchor="middle">responde nas issues</text>
+</g>
+<g class="node ">
+<rect x="710" y="390" width="170" height="96" rx="8"/>
+<text class="t" x="795.0" y="414" text-anchor="middle">Trazer o retorno</text>
+<text class="s" x="795.0" y="436" text-anchor="middle">tcc-60-sincronizar</text>
+<text class="x" x="795.0" y="451" text-anchor="middle">estado e comentários</text>
+</g>
+<g class="node dec"><polygon points="135,390 220,438 135,486 50,438"/><text class="t" x="135" y="437" text-anchor="middle">Mudar de etapa?</text><text class="x" x="135" y="453" text-anchor="middle">você decide</text></g>
+<path class="edge" d="M220 278.0 H268" marker-end="url(#ah)"/>
+<path class="edge" d="M440 278.0 H488" marker-end="url(#ah)"/>
+<path class="edge" d="M660 278.0 H708" marker-end="url(#ah)"/>
+<path class="edge" d="M795.0 326 V388" marker-end="url(#ah)"/>
+<path class="edge" d="M710 438.0 H222" marker-end="url(#ah)"/>
+<text class="el" x="465" y="430.0" text-anchor="middle">na próxima sessão, depois da revisão</text>
+<path class="edge" d="M135 390 V328" marker-end="url(#ah)"/>
+<text class="el" x="143" y="362" text-anchor="start">não: nova volta, mesma etapa</text>
+<path class="edge" d="M135 486 V570"/>
+<circle class="dot" cx="135" cy="570" r="3.5"/>
+<text class="el" x="143" y="530">sim</text>
+<path class="edge" d="M135 570 H26 V278 H48" marker-end="url(#ah)"/>
+<text class="el" x="18" y="424" text-anchor="middle" transform="rotate(-90 18 424)">sim: volta na etapa seguinte</text>
+<path class="edge" d="M135 570 V678" marker-end="url(#ah)"/>
+<text class="el" x="143" y="628" text-anchor="start">sim, se era a 08</text>
+<g class="node t20">
+<rect x="50" y="680" width="170" height="92" rx="8"/>
+<text class="t" x="135.0" y="704" text-anchor="middle">Revisão final e banca</text>
+<text class="s" x="135.0" y="726" text-anchor="middle">tcc-20-orientar</text>
+<text class="x" x="135.0" y="741" text-anchor="middle">etapa 09: revisa tudo</text>
+</g>
+<g class="node ">
+<rect x="270" y="680" width="170" height="92" rx="8"/>
+<text class="t" x="355.0" y="704" text-anchor="middle">Defesa</text>
+<text class="s" x="355.0" y="726" text-anchor="middle">tcc-80-formularios</text>
+<text class="x" x="355.0" y="741" text-anchor="middle">Ata e Ficha de Avaliação</text>
+</g>
+<g class="node ">
+<rect x="490" y="680" width="170" height="92" rx="8"/>
+<text class="t" x="575.0" y="704" text-anchor="middle">Correções da banca</text>
+<text class="s" x="575.0" y="726" text-anchor="middle">tcc-60-sincronizar</text>
+<text class="x" x="575.0" y="741" text-anchor="middle">ciclo curto, até 30 dias</text>
+</g>
+<g class="node ">
+<rect x="710" y="680" width="170" height="92" rx="8"/>
+<text class="t" x="795.0" y="704" text-anchor="middle">Encerrar orientação</text>
+<text class="s" x="795.0" y="726" text-anchor="middle">tcc-10-cadastrar</text>
+<text class="x" x="795.0" y="741" text-anchor="middle">status: aprovado</text>
+</g>
+<path class="edge" d="M220 726.0 H268" marker-end="url(#ah)"/>
+<path class="edge" d="M440 726.0 H488" marker-end="url(#ah)"/>
+<path class="edge" d="M660 726.0 H708" marker-end="url(#ah)"/>
+<g class="node pill"><rect x="50" y="838" width="390" height="32" rx="16"/><text x="245" y="859" text-anchor="middle"><tspan class="s">tcc-70-relatorio</tspan><tspan class="x"> · situação de todos os orientandos</tspan></text></g>
+<g class="node pill"><rect x="490" y="838" width="390" height="32" rx="16"/><text x="685" y="859" text-anchor="middle"><tspan class="s">tcc-80-formularios</tspan><tspan class="x"> · Carta de Aceite, Termos, Ata</tspan></text></g>
+</g></svg></div>
+    <div class="legend" aria-hidden="true">
+      <span><i class="sw"></i>orientador, com a skill indicada</span>
+      <span><i class="sw student"></i>trabalho do aluno, no repositório dele</span>
+      <span><i class="sw t20"></i>faz parte da tcc-20-orientar</span>
+      <span><i class="sw dec"></i>decisão do orientador</span>
+    </div>
+    <figcaption>A trilha no topo mostra as dez etapas. O bloco A é só a entrada do aluno. O bloco B dá uma ou mais voltas em cada etapa, de 00 a 08, e a decisão de mudar de etapa é sempre sua. O bloco C cobre a etapa 09. Toda comunicação com o aluno passa pelas issues, publicadas e lidas só pela <span class="mono">tcc-60-sincronizar</span>.</figcaption>
+  </figure>
+
+  <section>
+    <h2>Os 7 passos da tcc-20-orientar</h2>
+    <p class="lead" style="margin-bottom:14px">Toda sessão de orientação, em qualquer etapa de 00 a 09, segue estes mesmos passos, sempre nesta ordem. Só o passo 20.3 muda conforme a etapa. Tudo que está em verde nos dois diagramas é trabalho da tcc-20-orientar.</p>
+    <figure>
+      <div class="scroll"><svg class="flow" viewBox="0 0 920 534" role="img" aria-label="Os 7 passos da tcc-20-orientar: 20.1 preparar, 20.2 revisar com a tcc-50, 20.3 trabalhar a etapa, 20.4 montar a pauta, 20.5 reunião, 20.6 registrar e 20.7 decidir se muda de etapa; nos dois casos a próxima sessão recomeça no 20.1."><defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="grp20 solid" x="8" y="14" width="904" height="506" rx="10"/>
+<text class="g20l" x="24" y="38">tcc-20-orientar · os mesmos 7 passos em toda sessão, em qualquer etapa</text>
+<g class="node t20">
+<rect x="50" y="56" width="170" height="110" rx="8"/>
+<text class="t" x="135.0" y="80" text-anchor="middle">20.1 Preparar</text>
+<text class="x" x="135.0" y="102" text-anchor="middle">lê etapa atual e roteiro</text>
+<text class="x" x="135.0" y="117" text-anchor="middle">pendências abertas</text>
+<text class="x" x="135.0" y="132" text-anchor="middle">docs/TCC e código</text>
+</g>
+<g class="node t20 rev">
+<rect x="270" y="56" width="170" height="110" rx="8"/>
+<text class="t" x="355.0" y="80" text-anchor="middle">20.2 Revisar</text>
+<text class="s" x="355.0" y="102" text-anchor="middle">tcc-50-revisar</text>
+<text class="x" x="355.0" y="117" text-anchor="middle">obrigatório, 00 a 09</text>
+<text class="x" x="355.0" y="132" text-anchor="middle">checklist da etapa</text>
+<text class="x" x="355.0" y="147" text-anchor="middle">DEVE / NÃO DEVE</text>
+</g>
+<g class="node t20"><rect x="490" y="56" width="390" height="222" rx="8"/></g>
+<text class="t" x="506" y="80">20.3 Trabalhar a etapa</text>
+<text class="x" x="506" y="96">o que se faz depende da etapa do aluno</text>
+<g class="node sub"><rect x="502" y="108" width="366" height="48" rx="6"/><text class="sn" x="518" y="137">00</text><text class="x" x="570" y="128">analisar a proposta · direcionar para TCC</text><text class="x" x="570" y="144">estruturar tópicos (nova) · sugerir referências (nova)</text></g>
+<g class="node sub"><rect x="502" y="162" width="366" height="48" rx="6"/><text class="sn" x="518" y="191">01–08</text><text class="x" x="570" y="182">acompanhar a parte do TCC da etapa</text><text class="x" x="570" y="198">referências em capítulo novo · ajustar estrutura</text></g>
+<g class="node sub"><rect x="502" y="216" width="366" height="48" rx="6"/><text class="sn" x="518" y="245">09</text><text class="x" x="570" y="236">preparar a defesa</text><text class="x" x="570" y="252">banca, prazos e apresentação</text></g>
+<path class="edge" d="M220 111.0 H268" marker-end="url(#ah2)"/>
+<path class="edge" d="M440 111.0 H488" marker-end="url(#ah2)"/>
+<g class="node t20">
+<rect x="710" y="340" width="170" height="110" rx="8"/>
+<text class="t" x="795.0" y="364" text-anchor="middle">20.4 Montar a pauta</text>
+<text class="x" x="795.0" y="386" text-anchor="middle">o que está pronto</text>
+<text class="x" x="795.0" y="401" text-anchor="middle">perguntas da reunião</text>
+<text class="x" x="795.0" y="416" text-anchor="middle">pendências novas</text>
+</g>
+<g class="node t20 student">
+<rect x="490" y="340" width="170" height="110" rx="8"/>
+<text class="t" x="575.0" y="364" text-anchor="middle">20.5 Reunião</text>
+<text class="x" x="575.0" y="386" text-anchor="middle">orientador e aluno</text>
+<text class="x" x="575.0" y="401" text-anchor="middle">combinam decisões</text>
+<text class="x" x="575.0" y="416" text-anchor="middle">e próximos passos</text>
+</g>
+<g class="node t20">
+<rect x="270" y="340" width="170" height="110" rx="8"/>
+<text class="t" x="355.0" y="364" text-anchor="middle">20.6 Registrar</text>
+<text class="s" x="355.0" y="386" text-anchor="middle">tcc-30-frequencia</text>
+<text class="x" x="355.0" y="401" text-anchor="middle">histórico e pendências</text>
+<text class="x" x="355.0" y="416" text-anchor="middle">no acompanhamento</text>
+</g>
+<path class="edge" d="M795.0 278 V338" marker-end="url(#ah2)"/>
+<path class="edge" d="M710 395.0 H662" marker-end="url(#ah2)"/>
+<path class="edge" d="M490 395.0 H442" marker-end="url(#ah2)"/>
+<g class="node dec"><polygon points="135,340 220,395.0 135,450 50,395.0"/><text class="t" x="135" y="394.0" text-anchor="middle">20.7 Mudar</text><text class="t" x="135" y="410.0" text-anchor="middle">de etapa?</text></g>
+<path class="edge" d="M270 395.0 H222" marker-end="url(#ah2)"/>
+<path class="edge" d="M135 340 V168" marker-end="url(#ah2)"/>
+<text class="el" x="143" y="257.0" text-anchor="start">não: próxima sessão na mesma etapa</text>
+<path class="edge" d="M135 450 V480 H26 V111.0 H48" marker-end="url(#ah2)"/>
+<text class="el" x="18" y="295.5" text-anchor="middle" transform="rotate(-90 18 295.5)">sim: grava a etapa nova e segue</text>
+<text class="el" x="143" y="472">checklist atendido e você confirma</text>
+<text class="el" x="660" y="500" text-anchor="middle">pendências do 20.6 vão ao aluno pela tcc-60-sincronizar</text>
+</svg></div>
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw t20"></i>passo da tcc-20-orientar</span>
+        <span><i class="sw student"></i>com o aluno</span>
+        <span><i class="sw dec"></i>decisão do orientador</span>
+      </div>
+    </figure>
+    <div class="tbl" style="margin-top:18px">
+    <table>
+      <thead><tr><th>Passo</th><th>O que faz</th><th>O que sai dele</th></tr></thead>
+      <tbody>
+        <tr><td>20.1 Preparar</td><td>Lê a etapa atual do aluno, o roteiro da etapa, as pendências abertas e o repositório (docs/TCC e código).</td><td>Contexto da sessão.</td></tr>
+        <tr><td>20.2 Revisar</td><td>Chama a tcc-50-revisar sobre a parte do TCC da etapa: checklist, o que cada seção deve e não deve ter, e ABNT. Nunca é pulado.</td><td>Lista do que está certo e do que precisa corrigir.</td></tr>
+        <tr><td>20.3 Trabalhar a etapa</td><td>Na etapa 00: analisa a proposta, direciona para TCC, estrutura os tópicos e sugere referências. Nas etapas 01 a 08: acompanha a parte da etapa, sugere referências quando começa capítulo novo e ajusta a estrutura se preciso. Na 09: prepara a defesa.</td><td>Orientações e sugestões para o aluno.</td></tr>
+        <tr><td>20.4 Montar a pauta</td><td>Junta o que está pronto, as perguntas para a reunião e as pendências novas.</td><td>Pauta da reunião.</td></tr>
+        <tr><td>20.5 Reunião</td><td>Orientador e aluno conversam e combinam decisões e próximos passos.</td><td>Decisões combinadas.</td></tr>
+        <tr><td>20.6 Registrar</td><td>Grava o histórico e as pendências no acompanhamento. A frequência fica com a tcc-30-frequencia.</td><td>Pendências prontas para a tcc-60-sincronizar.</td></tr>
+        <tr><td>20.7 Mudar de etapa?</td><td>Decisão sua. A tcc-20 mostra se o checklist da etapa foi atendido; se você confirmar, ela grava a etapa nova no registro. Nos dois casos, a próxima sessão recomeça no 20.1.</td><td>Mesma etapa, ou a seguinte.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Estrutura recomendada do TCC</h2>
+    <p class="lead" style="margin-bottom:14px">A estrutura que você indicou vira a referência da revisão (passo 20.2). A tcc-50-revisar confere se cada seção existe, está nesta ordem e tem o conteúdo certo.</p>
+    <div class="outline">
+      <div class="ch"><b>1 INTRODUÇÃO</b> <span class="et">etapas 01 a 03; 1.7 na 08</span>
+        <ul>
+          <li><span class="mono">1.1</span> Contextualização</li>
+          <li><span class="mono">1.2</span> Problema de pesquisa <em>termina com o problema explícito, de preferência como pergunta</em></li>
+          <li><span class="mono">1.3</span> Hipótese ou pressuposto da solução <em>fica aqui: depois do problema, antes dos objetivos. Na contextualização ou nos objetivos, vira pendência.</em></li>
+          <li><span class="mono">1.4</span> Objetivo geral <em>uma frase, um verbo no infinitivo</em></li>
+          <li><span class="mono">1.5</span> Objetivos específicos <em>lista não numerada, um verbo no infinitivo por item</em></li>
+          <li><span class="mono">1.6</span> Justificativa <em>vem depois dos objetivos, com evidências</em></li>
+          <li><span class="mono">1.7</span> Organização do trabalho <em>escrita na etapa 08, quando todos os capítulos existem</em></li>
+        </ul>
+      </div>
+      <div class="ch"><b>2 REFERENCIAL TEÓRICO</b> <span class="et">etapa 04</span>
+        <ul>
+          <li><span class="mono">2.1</span> Conceitos da área do problema</li>
+          <li><span class="mono">2.2</span> Tecnologias utilizadas <em>por que cada uma importa para o problema, sem virar tutorial</em></li>
+          <li><span class="mono">2.3</span> Engenharia de software</li>
+          <li><span class="mono">2.4</span> Trabalhos relacionados <em>comparação com critérios explícitos, fechando com a lacuna que o TCC ocupa</em></li>
+        </ul>
+      </div>
+      <div class="ch"><b>3 METODOLOGIA</b> <span class="et">etapa 05</span>
+        <ul>
+          <li><span class="mono">3.1</span> Natureza da pesquisa</li>
+          <li><span class="mono">3.2</span> Método de desenvolvimento</li>
+          <li><span class="mono">3.3</span> Levantamento de requisitos</li>
+          <li><span class="mono">3.4</span> Tecnologias e ferramentas <em>escolhas justificadas; a teoria sobre elas fica em 2.2</em></li>
+          <li><span class="mono">3.5</span> Procedimentos de avaliação <em>define como o capítulo 5 vai avaliar o software</em></li>
+        </ul>
+      </div>
+      <div class="ch"><b>4 DESENVOLVIMENTO DO SOFTWARE</b> <span class="et">etapa 06</span>
+        <ul>
+          <li><span class="mono">4.1</span> Requisitos</li>
+          <li><span class="mono">4.2</span> Arquitetura</li>
+          <li><span class="mono">4.3</span> Modelagem</li>
+          <li><span class="mono">4.4</span> Implementação <em>o que o texto afirma precisa existir no código do repositório</em></li>
+          <li><span class="mono">4.5</span> Testes</li>
+        </ul>
+      </div>
+      <div class="ch"><b>5 RESULTADOS E AVALIAÇÃO</b> <span class="et">etapa 07</span></div>
+      <div class="ch"><b>6 CONSIDERAÇÕES FINAIS</b> <span class="et">etapa 08</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>O que cada etapa resolve</h2>
+    <p class="lead" style="margin-bottom:14px">Toda etapa começa com a revisão da parte do TCC em foco, feita pela tcc-50-revisar dentro da tcc-20-orientar. As etapas 00 a 08 passam pelo mesmo ciclo do bloco B. O que muda de uma para outra é o roteiro em <span class="mono">etapas/</span>: a parte do TCC em foco e o checklist que decide se o aluno pode seguir.</p>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>Etapa</th><th>Parte do TCC</th><th>Para seguir adiante, o aluno precisa ter</th><th>Skills além do ciclo</th></tr></thead>
+      <tbody>
+        <tr><td>00 Concepção</td><td>Proposta inicial</td><td>Tema em uma frase, escopo delimitado, viabilidade avaliada e aderência ao curso.</td><td>no 20.3: analisar, direcionar, estruturar, referências</td></tr>
+        <tr><td>01 Problema</td><td>1.1 Contextualização, 1.2 Problema, 1.6 Justificativa</td><td>Problema formulado como pergunta, justificativa com evidências e o que o trabalho não vai resolver.</td><td>—</td></tr>
+        <tr><td>02 Hipótese</td><td>1.3 Hipótese ou pressuposto da solução</td><td>Hipótese testável na seção 1.3, logo depois do problema e antes dos objetivos.</td><td>—</td></tr>
+        <tr><td>03 Objetivos</td><td>1.4 Objetivo geral, 1.5 Objetivos específicos</td><td>Objetivo geral numa frase e de 3 a 5 específicos em lista não numerada, todos verificáveis.</td><td>—</td></tr>
+        <tr><td>04 Referencial</td><td>2 Referencial teórico, 2.1 a 2.4</td><td>Conceitos da área, tecnologias, engenharia de software e trabalhos relacionados, com fontes acadêmicas e atuais.</td><td>no 20.3: referências para aprofundar</td></tr>
+        <tr><td>05 Metodologia</td><td>3 Metodologia, 3.1 a 3.5</td><td>Natureza da pesquisa e método definidos, requisitos levantados, ferramentas justificadas e avaliação planejada.</td><td>—</td></tr>
+        <tr><td>06 Desenvolvimento</td><td>4 Desenvolvimento do software, 4.1 a 4.5</td><td>Requisitos, arquitetura, modelagem, implementação e testes descritos e presentes no código.</td><td>—</td></tr>
+        <tr><td>07 Resultados</td><td>5 Resultados e avaliação</td><td>Avaliação feita como previsto em 3.5, com evidências, discussão e limitações.</td><td>—</td></tr>
+        <tr><td>08 Considerações</td><td>6 Considerações finais, 1.7 Organização, resumo e abstract</td><td>Cada objetivo retomado, hipótese confrontada, organização do trabalho escrita e resumo validado (150 a 500 palavras).</td><td>revisão inclui o resumo</td></tr>
+        <tr><td>09 Defesa</td><td>Documento inteiro</td><td>Revisão final aprovada, banca com 15 dias de leitura, apresentação de até 30 minutos.</td><td>tcc-80 (bloco C)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>As skills, na ordem em que aparecem</h2>
+    <div class="tbl">
+    <table>
+      <thead><tr><th>Skill</th><th>Nome anterior</th><th>Onde entra no ciclo</th></tr></thead>
+      <tbody>
+        <tr><td>tcc-10-cadastrar</td><td class="old">gerenciar-orientandos</td><td>Só o cadastro: aceitar o orientando e encerrar a orientação.</td></tr>
+        <tr><td>tcc-20-orientar</td><td class="old">orientar-etapa</td><td>Toda sessão de orientação, de 00 a 09, com os passos 20.1 a 20.7. Revisa sempre com a tcc-50-revisar e muda a etapa depois da sua confirmação. Estruturar tópicos <span class="new-pill">nova</span> e sugerir referências <span class="new-pill">nova</span> fazem parte do passo 20.3.</td></tr>
+        <tr><td>tcc-30-frequencia</td><td class="old">registrar-frequencia</td><td>Registra cada reunião (data, duração e assunto) para o Anexo VII.</td></tr>
+        <tr><td>tcc-40-solicitar</td><td class="old">registrar-solicitacao</td><td>Pedido avulso do orientador vira pendência no acompanhamento.</td></tr>
+        <tr><td>tcc-50-revisar</td><td class="old">revisar-typst</td><td>Obrigatória em toda sessão da tcc-20, de 00 a 09. Revisa a parte do TCC em foco: estrutura, o que cada seção deve e não deve ter, e ABNT. Na etapa 00 revisa a proposta inicial; na 09, o documento inteiro.</td></tr>
+        <tr><td>tcc-60-sincronizar</td><td class="old">sincronizar-issues</td><td>Publica as pendências como issues e traz de volta o que o aluno respondeu ou fechou.</td></tr>
+        <tr><td>tcc-70-relatorio</td><td class="old">relatorio-acompanhamento</td><td>A qualquer momento: situação de todos os orientandos.</td></tr>
+        <tr><td>tcc-80-formularios</td><td class="old">apoio-orientador</td><td>Carta de Aceite na entrada; Ata e Ficha de Avaliação na defesa.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+
+</div>
+</body>
+</html>

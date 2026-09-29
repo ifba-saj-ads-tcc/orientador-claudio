@@ -1,24 +1,37 @@
 # Etapa 05 — Metodologia
 
+> Capítulo do TCC: 3 Metodologia (3.1 a 3.5).
+> Regras: MET-01 a MET-07 (`normas/conteudo-por-secao.md`).
+
 ## Objetivo
-Explicitar como o trabalho foi (ou será) conduzido, de forma que outra pessoa consiga entender e, em tese, reproduzir os passos.
+Explicitar como o trabalho foi conduzido, de forma que outra pessoa consiga entender e, em tese,
+reproduzir os passos — incluindo como o software será avaliado.
+
+## O que a `tcc-20-orientar` faz no passo 20.3
+Acompanha o capítulo 3. Confere se cada passo decorre de um objetivo específico e se a 3.5 deixa
+o capítulo 5 bem definido. Sugere referências de metodologia quando o capítulo começa.
 
 ## Perguntas orientadoras
-- Que tipo de pesquisa é (aplicada, exploratória, descritiva...) e qual abordagem (qualitativa, quantitativa, mista)?
-- Se há desenvolvimento de software: qual metodologia de desenvolvimento foi usada (Scrum, prototipação, etc.)?
-- Quais instrumentos de coleta de dados, ferramentas e tecnologias foram empregados, e por quê?
-- Os passos metodológicos decorrem diretamente dos objetivos específicos da Etapa 02?
+- Que tipo de pesquisa é, e por quê?
+- Qual método de desenvolvimento foi usado de fato, e como foi aplicado?
+- Como os requisitos foram levantados?
+- Como o software será avaliado: com quais métricas, critérios e participantes?
 
-## Checklist de conclusão da etapa
-- [ ] Classificação da pesquisa justificada (não só citada)
-- [ ] Descrição passo a passo do que foi feito, em ordem cronológica
-- [ ] Ferramentas e tecnologias justificadas (por que essa e não outra?)
-- [ ] Metodologia suficiente para outra pessoa reproduzir o essencial
+## Checklist para mudar de etapa (decisão no passo 20.7)
+- [ ] 3.1 classifica e justifica a pesquisa (MET-03)
+- [ ] 3.2 descreve o método aplicado, não o do livro (MET-04)
+- [ ] 3.3 explica o levantamento de requisitos (MET-05)
+- [ ] 3.4 justifica tecnologias e ferramentas (MET-06)
+- [ ] 3.5 define o plano de avaliação (MET-07)
+- [ ] Cada passo ligado a um objetivo específico (MET-01)
+
+## DEVE / NÃO DEVE nesta etapa
+- NÃO DEVE trazer resultados, telas prontas nem repetir a teoria do capítulo 2 (MET-02).
 
 ## Erros comuns
 - Metodologia copiada de livro-texto sem adaptar ao trabalho real
-- Descrever o que vai ser feito no futuro, mas não o que de fato foi feito
-- Falta de relação entre metodologia e os objetivos específicos
+- Descrever o que vai ser feito, mas não o que de fato foi feito
+- Plano de avaliação ausente, que deixa o capítulo 5 sem critério
 
 ## Critério de avaliação relacionado
-Ficha de Avaliação, item "A Metodologia é apropriada? Está bem explicitada e organizada?" (Conteúdo, 7 pontos).
+Ficha de Avaliação: "A Metodologia é apropriada? Está bem explicitada e organizada?" (Conteúdo, 7 pontos).

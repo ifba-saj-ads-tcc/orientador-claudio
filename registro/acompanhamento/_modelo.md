@@ -5,18 +5,23 @@
 
 ## 1. Marcos do cronograma
 
-| # | Marco | Data alvo | Data revisada | Status | Etapa relacionada |
-|---|---|---|---|---|---|
-| 1 | Tema e problema definidos | | | pendente | etapas/00, etapas/01 |
-| 2 | Objetivos e hipóteses | | | pendente | etapas/02, etapas/03 |
-| 3 | Referencial teórico | | | pendente | etapas/04 |
-| 4 | Metodologia | | | pendente | etapas/05 |
-| 5 | Desenvolvimento/Resultados | | | pendente | etapas/06 |
-| 6 | Conclusão | | | pendente | etapas/07 |
-| 7 | Revisão final ABNT | | | pendente | normas/normas-abnt-detalhado.md |
-| 8 | Defesa | | | pendente | etapas/08 |
+| Etapa | Marco | Data alvo | Data revisada | Status |
+|---|---|---|---|---|
+| 00 | Concepção: tema, escopo, estrutura de tópicos e primeiras leituras | | | pendente |
+| 01 | Problema: 1.1 Contextualização, 1.2 Problema, 1.6 Justificativa | | | pendente |
+| 02 | Hipótese: 1.3 | | | pendente |
+| 03 | Objetivos: 1.4 e 1.5 | | | pendente |
+| 04 | Referencial teórico: cap. 2 | | | pendente |
+| 05 | Metodologia: cap. 3 | | | pendente |
+| 06 | Desenvolvimento do software: cap. 4 | | | pendente |
+| 07 | Resultados e avaliação: cap. 5 | | | pendente |
+| 08 | Considerações finais: cap. 6, 1.7, resumo e abstract | | | pendente |
+| 09 | Defesa | | | pendente |
 
 ## 2. Histórico de orientações
+
+> Uma linha por sessão (passo 20.6 da `tcc-20-orientar`) e por encontro registrado pela
+> `tcc-30-frequencia`. Mudanças de etapa (passo 20.7) também ficam aqui.
 
 | Data | Etapa/Tópico | Decisões | Próximos passos |
 |---|---|---|---|
@@ -24,11 +29,21 @@
 
 ## 3. Pendências rastreáveis
 
-> Preenchido pelas skills de revisão/orientação; sincronizado com o GitHub apenas pela skill
-> `sincronizar-issues`. Ver estados possíveis em `contrato/contrato-de-acesso.md`.
+> Preenchido pela `tcc-20-orientar`, `tcc-40-solicitar` e `tcc-50-revisar`; sincronizado com o
+> GitHub apenas pela `tcc-60-sincronizar`. O Diagnóstico começa pelo código da regra de
+> `normas/conteudo-por-secao.md`, quando houver. Estados em `contrato/contrato-de-acesso.md`.
 
 | # | Labels | Título | Localização | Citação | Diagnóstico | Sugestão | Prioridade | Estado | Issue | Comentários |
 |---|---|---|---|---|---|---|---|---|---|---|
 | | | | | | | | | pendente | | |
+
+## 4. Leituras sugeridas
+
+> Preenchido pela `tcc-20-orientar` (passo 20.3). Só referências verificadas: a coluna
+> Verificação traz o DOI, ISBN ou link conferido.
+
+| Data | Tópico / seção | Referência (ABNT) | Verificação | Situação |
+|---|---|---|---|---|
+| | | | | sugerida |
 
 Atualizado em: —
