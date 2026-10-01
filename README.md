@@ -24,6 +24,8 @@ Diagramas e tabelas completas:
   (abra o arquivo no navegador)
 - [`docs/base-de-conhecimento.md`](docs/base-de-conhecimento.md) — tudo num arquivo só, para usar
   como conhecimento de um Projeto no claude.ai
+- [`docs/instrucoes-projeto.md`](docs/instrucoes-projeto.md) — texto para o campo Instruções do
+  projeto, usado junto com a base de conhecimento
 
 | Skill | Papel |
 |---|---|
