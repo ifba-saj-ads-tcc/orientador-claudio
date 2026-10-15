@@ -133,7 +133,7 @@ Introdução/Desenvolvimento/Conclusão como elementos textuais, mas **dentro do
 "Desenvolvimento"**, é boa prática (e é o que a Ficha de Avaliação do Regimento
 de TCC do ADS/IFBA-SAJ cobra) seguir a lógica IMRaD adaptada:
 
-Introdução → Referencial Teórico (Fundamentação) → Metodologia → Resultados/Discussão → Conclusão
+Introdução → Referencial Teórico (Fundamentação) → Trabalhos Correlatos → Metodologia → Resultados/Discussão → Conclusão
 
 Isso está refletido nos arquivos de `etapas/04` a `etapas/08` e na estrutura recomendada de
 `normas/conteudo-por-secao.md`.

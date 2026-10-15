@@ -37,6 +37,8 @@ seções fora de ordem (EST-01).
      pendência (INT-11). Conte os itens: de 3 a 5 (INT-12).
    - Ordem 1.4 → 1.5 → 1.6 (INT-14) e 1.7 coerente com os capítulos reais (INT-17).
    - Listagens longas de código no corpo e figuras sem fonte ou sem citação (DES-02, DES-03).
+   - Trabalhos correlatos como capítulo próprio (3), entre o referencial (2) e a metodologia (4)
+     (COR-01, EST-01); correlatos dentro do referencial ou da metodologia viram pendência.
    - Resumo/abstract quando existirem: 150 a 500 palavras, parágrafo único, 3 a 6 palavras-chave
      separadas por `;` (RSM-01, RSM-03).
    - ABNT: citações `(AUTOR, ano)` × referências, numeração de seções até 5 níveis sem saltos,
@@ -45,6 +47,10 @@ seções fora de ordem (EST-01).
 4. **Leitura crítica** das regras `leitura` da etapa: coerência problema ↔ hipótese ↔ objetivos
    ↔ metodologia ↔ resultados ↔ considerações, qualidade da discussão teórica, correspondência
    entre texto e código (DES-07, lendo o código do repositório nas etapas 06 e 07).
+   **Trabalhos correlatos (capítulo 3):** para cada trabalho analisado, confira objetivo, solução
+   e lacuna (COR-03). Uma pendência por trabalho incompleto, apontado por autor e ano, sem
+   reproduzir o texto do aluno; lacuna ausente é prioridade alta, objetivo ou solução ausentes são
+   média. Label `cap-correlatos`.
 5. **Registrar.** Para cada problema, uma linha de pendência em
    `registro/acompanhamento/<slug>.md`, seção 3 (mesmo formato da `tcc-40-solicitar`):
    Localização (`docs/TCC/main.typ:120`), Citação curta, Diagnóstico começando pelo código da

@@ -33,28 +33,35 @@ posição de cada seção se mantenham.
 | 2.1 Conceitos da área do problema | 04 |
 | 2.2 Tecnologias utilizadas | 04 |
 | 2.3 Engenharia de software | 04 |
-| 2.4 Trabalhos relacionados | 04 |
-| **3 METODOLOGIA** | 05 |
-| 3.1 Natureza da pesquisa | 05 |
-| 3.2 Método de desenvolvimento | 05 |
-| 3.3 Levantamento de requisitos | 05 |
-| 3.4 Tecnologias e ferramentas | 05 |
-| 3.5 Procedimentos de avaliação | 05 |
-| **4 DESENVOLVIMENTO DO SOFTWARE** | 06 |
-| 4.1 Requisitos | 06 |
-| 4.2 Arquitetura | 06 |
-| 4.3 Modelagem | 06 |
-| 4.4 Implementação | 06 |
-| 4.5 Testes | 06 |
-| **5 RESULTADOS E AVALIAÇÃO** | 07 |
-| **6 CONSIDERAÇÕES FINAIS** | 08 |
+| **3 TRABALHOS CORRELATOS** | 04 |
+| 3.1 Critérios de comparação | 04 |
+| 3.2 Trabalhos analisados | 04 |
+| 3.3 Análise comparativa e lacuna | 04 |
+| **4 METODOLOGIA** | 05 |
+| 4.1 Natureza da pesquisa | 05 |
+| 4.2 Método de desenvolvimento | 05 |
+| 4.3 Levantamento de requisitos | 05 |
+| 4.4 Tecnologias e ferramentas | 05 |
+| 4.5 Procedimentos de avaliação | 05 |
+| **5 DESENVOLVIMENTO DO SOFTWARE** | 06 |
+| 5.1 Requisitos | 06 |
+| 5.2 Arquitetura | 06 |
+| 5.3 Modelagem | 06 |
+| 5.4 Implementação | 06 |
+| 5.5 Testes | 06 |
+| **6 RESULTADOS E AVALIAÇÃO** | 07 |
+| **7 CONSIDERAÇÕES FINAIS** | 08 |
+
+Os trabalhos correlatos têm **capítulo próprio** (3): ficam depois do referencial teórico e antes da
+metodologia, nem dentro do capítulo 2 nem depois do capítulo 4. A etapa 04 acompanha os capítulos
+2 e 3.
 
 ## Regras gerais de estrutura (EST)
 
 | Código | Regra | Verificação |
 |---|---|---|
 | EST-01 | DEVE seguir a ordem de capítulos e seções da estrutura recomendada. | auto |
-| EST-02 | NÃO DEVE ter seção de um capítulo dentro de outro (ex.: trabalhos relacionados dentro da metodologia). | auto |
+| EST-02 | NÃO DEVE ter seção de um capítulo dentro de outro (ex.: trabalhos correlatos dentro do referencial ou da metodologia). | auto |
 | EST-03 | NÃO DEVE ter seção vazia ou só com o título, exceto as de etapas futuras ainda não trabalhadas. | auto |
 | EST-04 | NÃO DEVE ter placeholder do template (texto de exemplo, "lorem ipsum", ficha catalográfica ou banca de exemplo) em seção já trabalhada. | auto |
 
@@ -83,7 +90,7 @@ posição de cada seção se mantenham.
 |---|---|---|
 | INT-06 | DEVE ficar **nesta seção**: depois do problema (1.2) e antes dos objetivos (1.4). | auto |
 | INT-07 | NÃO DEVE aparecer na contextualização, no problema, nos objetivos nem na justificativa. Hipótese ou proposta de solução fora da 1.3 vira pendência. | leitura |
-| INT-08 | DEVE ser testável: ao final do trabalho, o capítulo 5 precisa conseguir dizer se ela se sustentou. | leitura |
+| INT-08 | DEVE ser testável: ao final do trabalho, o capítulo 6 precisa conseguir dizer se ela se sustentou. | leitura |
 
 ### 1.4 Objetivo geral — etapa 03
 
@@ -128,57 +135,75 @@ posição de cada seção se mantenham.
 | REF-06 | 2.2 | DEVE explicar por que cada tecnologia importa para o problema. NÃO DEVE virar tutorial nem manual de instalação. | leitura |
 | REF-07 | 2.2 | NÃO DEVE usar blog ou documentação de fornecedor como única base de conceito central. | leitura |
 | REF-08 | 2.3 | DEVE tratar os conceitos de engenharia de software que o trabalho aplica (processo, requisitos, arquitetura, testes). | leitura |
-| REF-09 | 2.4 | DEVE comparar os trabalhos relacionados com critérios explícitos, de preferência numa tabela, e fechar mostrando a lacuna que este TCC ocupa. | leitura |
-| REF-10 | 2.4 | NÃO DEVE só listar trabalhos, sem comparação. | leitura |
+
+> REF-09 e REF-10 (antiga seção 2.4) foram substituídas pelas regras COR-02 a COR-06 do capítulo 3.
+> Os códigos não são reutilizados.
 
 ---
 
-## 3 Metodologia (MET) — etapa 05
+## 3 Trabalhos correlatos (COR) — etapa 04
+
+| Código | Seção | Regra | Verificação |
+|---|---|---|---|
+| COR-01 | geral | DEVE ser um capítulo próprio (3), depois do referencial teórico e antes da metodologia. | auto |
+| COR-02 | 3.1 | DEVE declarar os critérios de comparação (ex.: público, tecnologia, funcionalidades, forma de avaliação) antes de comparar os trabalhos. | leitura |
+| COR-03 | 3.2 | DEVE trazer, para **cada** trabalho analisado, **objetivo** (o que o autor fez), **solução** (como resolveu o problema) e **lacuna** (o que não resolveu ou onde difere deste TCC). Falta de qualquer um dos três vira pendência, uma por trabalho. | leitura |
+| COR-04 | 3.2 | NÃO DEVE só listar ou resumir trabalhos, sem comparação. | leitura |
+| COR-05 | 3.3 | DEVE comparar os trabalhos e a proposta do aluno pelos critérios da 3.1, de preferência numa tabela. | leitura |
+| COR-06 | 3.3 | DEVE fechar mostrando a lacuna que este TCC ocupa, a partir das lacunas dos trabalhos analisados. | leitura |
+| COR-07 | geral | DEVE usar trabalhos verificáveis (com referência completa) e ligados ao problema, de preferência dos últimos 5 a 10 anos. | leitura |
+
+Prioridade sugerida das pendências: lacuna ausente (COR-03) e capítulo fora do lugar (COR-01) são
+**alta**; objetivo ou solução ausentes (COR-03) são **média**.
+
+---
+
+## 4 Metodologia (MET) — etapa 05
 
 | Código | Seção | Regra | Verificação |
 |---|---|---|---|
 | MET-01 | geral | DEVE ligar cada passo metodológico a um objetivo específico da 1.5. | leitura |
 | MET-02 | geral | NÃO DEVE trazer resultados, telas do sistema pronto nem repetir a teoria do capítulo 2. | leitura |
-| MET-03 | 3.1 | DEVE classificar a pesquisa (natureza, abordagem, objetivos) e justificar a classificação. | leitura |
-| MET-04 | 3.2 | DEVE descrever o método de desenvolvimento usado de fato (ex.: Scrum adaptado, prototipação) e como foi aplicado. NÃO DEVE copiar a descrição genérica do livro. | leitura |
-| MET-05 | 3.3 | DEVE dizer como os requisitos foram levantados (com quem, com quais técnicas). A lista de requisitos fica na 4.1. | leitura |
-| MET-06 | 3.4 | DEVE justificar a escolha de cada tecnologia e ferramenta. A teoria sobre elas fica na 2.2. | leitura |
-| MET-07 | 3.5 | DEVE definir como o software será avaliado: métricas, critérios, participantes e instrumentos. O capítulo 5 segue exatamente esse plano. | leitura |
+| MET-03 | 4.1 | DEVE classificar a pesquisa (natureza, abordagem, objetivos) e justificar a classificação. | leitura |
+| MET-04 | 4.2 | DEVE descrever o método de desenvolvimento usado de fato (ex.: Scrum adaptado, prototipação) e como foi aplicado. NÃO DEVE copiar a descrição genérica do livro. | leitura |
+| MET-05 | 4.3 | DEVE dizer como os requisitos foram levantados (com quem, com quais técnicas). A lista de requisitos fica na 5.1. | leitura |
+| MET-06 | 4.4 | DEVE justificar a escolha de cada tecnologia e ferramenta. A teoria sobre elas fica na 2.2. | leitura |
+| MET-07 | 4.5 | DEVE definir como o software será avaliado: métricas, critérios, participantes e instrumentos. O capítulo 6 segue exatamente esse plano. | leitura |
 
 ---
 
-## 4 Desenvolvimento do software (DES) — etapa 06
+## 5 Desenvolvimento do software (DES) — etapa 06
 
 | Código | Seção | Regra | Verificação |
 |---|---|---|---|
 | DES-01 | geral | DEVE descrever o que foi feito, com decisões técnicas justificadas. | leitura |
 | DES-02 | geral | NÃO DEVE reproduzir listagens longas de código no corpo do texto (vão para apêndice). | auto |
 | DES-03 | geral | NÃO DEVE ter figura sem fonte ou que não seja citada no texto. | auto |
-| DES-04 | 4.1 | DEVE listar os requisitos funcionais e não funcionais que saíram do levantamento da 3.3. | leitura |
-| DES-05 | 4.2 | DEVE apresentar a arquitetura com diagrama e explicação de cada parte. | leitura |
-| DES-06 | 4.3 | DEVE trazer a modelagem (casos de uso, classes, dados) coerente com os requisitos. | leitura |
-| DES-07 | 4.4 | O que o texto afirma que foi implementado DEVE existir no código do repositório do aluno. Funcionalidade descrita e ausente no código vira pendência. | leitura (código) |
-| DES-08 | 4.5 | DEVE descrever os testes realizados e o que cobrem. | leitura |
+| DES-04 | 5.1 | DEVE listar os requisitos funcionais e não funcionais que saíram do levantamento da 4.3. | leitura |
+| DES-05 | 5.2 | DEVE apresentar a arquitetura com diagrama e explicação de cada parte. | leitura |
+| DES-06 | 5.3 | DEVE trazer a modelagem (casos de uso, classes, dados) coerente com os requisitos. | leitura |
+| DES-07 | 5.4 | O que o texto afirma que foi implementado DEVE existir no código do repositório do aluno. Funcionalidade descrita e ausente no código vira pendência. | leitura (código) |
+| DES-08 | 5.5 | DEVE descrever os testes realizados e o que cobrem. | leitura |
 
 ---
 
-## 5 Resultados e avaliação (RES) — etapa 07
+## 6 Resultados e avaliação (RES) — etapa 07
 
 | Código | Regra | Verificação |
 |---|---|---|
-| RES-01 | DEVE aplicar a avaliação planejada na 3.5, com evidências (métricas, dados, testes, telas). | leitura |
-| RES-02 | DEVE discutir os resultados à luz do referencial e dos trabalhos relacionados (2.4). | leitura |
+| RES-01 | DEVE aplicar a avaliação planejada na 4.5, com evidências (métricas, dados, testes, telas). | leitura |
+| RES-02 | DEVE discutir os resultados à luz do referencial e dos trabalhos correlatos (capítulo 3). | leitura |
 | RES-03 | DEVE dizer se a hipótese da 1.3 se sustentou e declarar as limitações. | leitura |
 | RES-04 | NÃO DEVE apresentar conceito teórico novo, mudar o método nem afirmar algo sem evidência. | leitura |
 
 ---
 
-## 6 Considerações finais (CON) — etapa 08
+## 7 Considerações finais (CON) — etapa 08
 
 | Código | Regra | Verificação |
 |---|---|---|
 | CON-01 | DEVE retomar o objetivo geral e cada objetivo específico, na mesma ordem da 1.5, dizendo se foi atingido. | leitura |
-| CON-02 | DEVE confrontar a hipótese da 1.3 com os resultados do capítulo 5. | leitura |
+| CON-02 | DEVE confrontar a hipótese da 1.3 com os resultados do capítulo 6. | leitura |
 | CON-03 | DEVE trazer limitações e trabalhos futuros concretos. | leitura |
 | CON-04 | NÃO DEVE trazer informação nova, citações nem ser genérica a ponto de servir para qualquer TCC. | leitura |
 

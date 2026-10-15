@@ -9,7 +9,7 @@ retomadas uma a uma nas considerações finais.
 
 ## O que a `tcc-20-orientar` faz no passo 20.3
 Acompanha a escrita da 1.4 e da 1.5. Confere o tipo de lista dos objetivos específicos e se cada
-um poderá ser verificado no capítulo 6.
+um poderá ser verificado no capítulo 7.
 
 ## Perguntas orientadoras
 - O objetivo geral responde diretamente ao problema da 1.2?

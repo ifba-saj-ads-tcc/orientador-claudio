@@ -27,10 +27,10 @@ flowchart LR
 | 01 Problema | 1.1 Contextualização, 1.2 Problema, 1.6 Justificativa | Problema formulado como pergunta, justificativa com evidências e o que o trabalho não vai resolver |
 | 02 Hipótese | 1.3 Hipótese ou pressuposto da solução | Hipótese testável na seção 1.3, logo depois do problema e antes dos objetivos |
 | 03 Objetivos | 1.4 Objetivo geral, 1.5 Objetivos específicos | Objetivo geral numa frase e de 3 a 5 específicos em lista não numerada, todos verificáveis |
-| 04 Referencial | 2 Referencial teórico, 2.1 a 2.4 | Conceitos da área, tecnologias, engenharia de software e trabalhos relacionados, com fontes acadêmicas e atuais |
-| 05 Metodologia | 3 Metodologia, 3.1 a 3.5 | Natureza da pesquisa e método definidos, requisitos levantados, ferramentas justificadas e avaliação planejada |
-| 06 Desenvolvimento | 4 Desenvolvimento do software, 4.1 a 4.5 | Requisitos, arquitetura, modelagem, implementação e testes descritos e presentes no código |
-| 07 Resultados | 5 Resultados e avaliação | Avaliação feita como previsto em 3.5, com evidências, discussão e limitações |
+| 04 Referencial e correlatos | 2 Referencial teórico (2.1 a 2.3) e 3 Trabalhos correlatos (3.1 a 3.3) | Conceitos da área, tecnologias e engenharia de software; trabalhos correlatos com objetivo, solução e lacuna, comparados por critérios explícitos, com fontes acadêmicas e atuais |
+| 05 Metodologia | 4 Metodologia, 4.1 a 4.5 | Natureza da pesquisa e método definidos, requisitos levantados, ferramentas justificadas e avaliação planejada |
+| 06 Desenvolvimento | 5 Desenvolvimento do software, 5.1 a 5.5 | Requisitos, arquitetura, modelagem, implementação e testes descritos e presentes no código |
+| 07 Resultados | 6 Resultados e avaliação | Avaliação feita como previsto em 4.5, com evidências, discussão e limitações |
 | 08 Considerações | 6 Considerações finais, 1.7 Organização, resumo e abstract | Cada objetivo retomado, hipótese confrontada, organização do trabalho escrita e resumo validado (150 a 500 palavras) |
 | 09 Defesa | Documento inteiro | Revisão final aprovada, banca com 15 dias de leitura, apresentação de até 30 minutos |
 
@@ -148,18 +148,21 @@ nesta ordem e tem o conteúdo certo.
 | 2.1 Conceitos da área do problema | | 04 |
 | 2.2 Tecnologias utilizadas | Por que cada uma importa para o problema, sem virar tutorial | 04 |
 | 2.3 Engenharia de software | | 04 |
-| 2.4 Trabalhos relacionados | Comparação com critérios explícitos, fechando com a lacuna que o TCC ocupa | 04 |
-| **3 METODOLOGIA** | | 05 |
-| 3.1 Natureza da pesquisa | | 05 |
-| 3.2 Método de desenvolvimento | | 05 |
-| 3.3 Levantamento de requisitos | | 05 |
-| 3.4 Tecnologias e ferramentas | Escolhas justificadas; a teoria sobre elas fica em 2.2 | 05 |
-| 3.5 Procedimentos de avaliação | Define como o capítulo 5 vai avaliar o software | 05 |
-| **4 DESENVOLVIMENTO DO SOFTWARE** | | 06 |
-| 4.1 Requisitos | | 06 |
-| 4.2 Arquitetura | | 06 |
-| 4.3 Modelagem | | 06 |
-| 4.4 Implementação | O que o texto afirma precisa existir no código do repositório | 06 |
-| 4.5 Testes | | 06 |
-| **5 RESULTADOS E AVALIAÇÃO** | | 07 |
-| **6 CONSIDERAÇÕES FINAIS** | | 08 |
+| **3 TRABALHOS CORRELATOS** | Capítulo próprio, depois do referencial e antes da metodologia | 04 |
+| 3.1 Critérios de comparação | | 04 |
+| 3.2 Trabalhos analisados | Para cada um: objetivo, solução e lacuna | 04 |
+| 3.3 Análise comparativa e lacuna | Tabela comparativa, fechando com a lacuna que o TCC ocupa | 04 |
+| **4 METODOLOGIA** | | 05 |
+| 4.1 Natureza da pesquisa | | 05 |
+| 4.2 Método de desenvolvimento | | 05 |
+| 4.3 Levantamento de requisitos | | 05 |
+| 4.4 Tecnologias e ferramentas | Escolhas justificadas; a teoria sobre elas fica em 2.2 | 05 |
+| 4.5 Procedimentos de avaliação | Define como o capítulo 6 vai avaliar o software | 05 |
+| **5 DESENVOLVIMENTO DO SOFTWARE** | | 06 |
+| 5.1 Requisitos | | 06 |
+| 5.2 Arquitetura | | 06 |
+| 5.3 Modelagem | | 06 |
+| 5.4 Implementação | O que o texto afirma precisa existir no código do repositório | 06 |
+| 5.5 Testes | | 06 |
+| **6 RESULTADOS E AVALIAÇÃO** | | 07 |
+| **7 CONSIDERAÇÕES FINAIS** | | 08 |

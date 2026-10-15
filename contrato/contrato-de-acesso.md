@@ -60,7 +60,7 @@ pendente ──► criada #N ──► corrigida aguardando validação ──�
 
 | Dimensão | Valores |
 |---|---|
-| Capítulo | `cap-proposta`, `cap-introducao`, `cap-referencial`, `cap-metodologia`, `cap-desenvolvimento`, `cap-resultados`, `cap-consideracoes`, `cap-pretextual`, `cap-pos-textual` |
+| Capítulo | `cap-proposta`, `cap-introducao`, `cap-referencial`, `cap-correlatos`, `cap-metodologia`, `cap-desenvolvimento`, `cap-resultados`, `cap-consideracoes`, `cap-pretextual`, `cap-pos-textual` |
 | Natureza do apontamento | `estrutura`, `fato`, `fonte`, `formato`, `coerencia`, `abnt`, `codigo`, `seguranca` |
 | Prioridade | `prio-alta`, `prio-media`, `prio-baixa` |
 | Procedural | `entregavel` (ex.: pendência que bloqueia a entrega final) |
