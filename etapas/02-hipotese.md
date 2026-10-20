@@ -5,7 +5,7 @@
 
 ## Objetivo
 Explicitar o que se espera confirmar ou entregar, no lugar certo do texto, de forma que o
-capítulo 5 consiga dizer se a hipótese se sustentou.
+capítulo 6 consiga dizer se a hipótese se sustentou.
 
 > Em trabalhos de desenvolvimento, a hipótese costuma ser um **pressuposto da solução**: "um
 > sistema com as características X e Y reduz o problema Z". Ajuste a redação ao tipo de trabalho.
@@ -17,7 +17,7 @@ seções da introdução.
 ## Perguntas orientadoras
 - O trabalho testa uma hipótese (pesquisa) ou parte de um pressuposto de solução (desenvolvimento)?
 - A hipótese responde ao problema da 1.2?
-- Como o capítulo 5 vai confirmar ou refutar essa hipótese?
+- Como o capítulo 6 vai confirmar ou refutar essa hipótese?
 
 ## Checklist para mudar de etapa (decisão no passo 20.7)
 - [ ] A hipótese está na 1.3, depois do problema e antes dos objetivos (INT-06)

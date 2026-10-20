@@ -11,11 +11,11 @@
 | 01 | Problema: 1.1 Contextualização, 1.2 Problema, 1.6 Justificativa | | | pendente |
 | 02 | Hipótese: 1.3 | | | pendente |
 | 03 | Objetivos: 1.4 e 1.5 | | | pendente |
-| 04 | Referencial teórico: cap. 2 | | | pendente |
-| 05 | Metodologia: cap. 3 | | | pendente |
-| 06 | Desenvolvimento do software: cap. 4 | | | pendente |
-| 07 | Resultados e avaliação: cap. 5 | | | pendente |
-| 08 | Considerações finais: cap. 6, 1.7, resumo e abstract | | | pendente |
+| 04 | Referencial teórico e trabalhos correlatos: caps. 2 e 3 | | | pendente |
+| 05 | Metodologia: cap. 4 | | | pendente |
+| 06 | Desenvolvimento do software: cap. 5 | | | pendente |
+| 07 | Resultados e avaliação: cap. 6 | | | pendente |
+| 08 | Considerações finais: cap. 7, 1.7, resumo e abstract | | | pendente |
 | 09 | Defesa | | | pendente |
 
 ## 2. Histórico de orientações
