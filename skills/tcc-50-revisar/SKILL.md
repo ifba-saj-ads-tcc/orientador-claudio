@@ -66,4 +66,5 @@ seções fora de ordem (EST-01).
 - Nunca reproduza trechos longos do TCC na resposta — só o necessário para localizar.
 - Se o documento não existir, aceite um trecho colado pelo orientador — não bloqueie a revisão.
 - Preferência de estilo do orientador que não é regra vai no Histórico, não nas pendências.
-- Toda pendência baseada em regra cita o código da regra.
+- Toda pendência baseada em regra cita o código da regra no acompanhamento. O código é interno:
+  nas issues do aluno ele é trocado por uma descrição detalhada da regra (ver `tcc-60-sincronizar`).

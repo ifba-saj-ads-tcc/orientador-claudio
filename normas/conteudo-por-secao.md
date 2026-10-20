@@ -7,7 +7,8 @@
 ## Como usar
 
 - Cada regra tem um **código** (ex.: `INT-05`). Toda pendência gerada a partir de uma regra cita
-  o código no Diagnóstico, e a issue do aluno mostra o mesmo código.
+  o código no Diagnóstico do acompanhamento. O código é de uso interno: a issue do aluno não o
+  mostra e, no lugar dele, explica a regra em detalhe (o que a seção deve ter, onde e por quê).
 - **Verificação**: `auto` = a skill confere mecanicamente no `.typ` (títulos, ordem, tipo de
   lista, contagem); `leitura` = exige leitura crítica do texto.
 - **Etapa**: etapa de orientação (`etapas/NN-*.md`) em que a seção é trabalhada. A revisão

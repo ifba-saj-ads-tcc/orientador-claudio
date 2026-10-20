@@ -31,7 +31,8 @@
 
 > Preenchido pela `tcc-20-orientar`, `tcc-40-solicitar` e `tcc-50-revisar`; sincronizado com o
 > GitHub apenas pela `tcc-60-sincronizar`. O Diagnóstico começa pelo código da regra de
-> `normas/conteudo-por-secao.md`, quando houver. Estados em `contrato/contrato-de-acesso.md`.
+> `normas/conteudo-por-secao.md`, quando houver. O código é interno: nas issues do aluno ele é
+> trocado por uma descrição detalhada da regra. Estados em `contrato/contrato-de-acesso.md`.
 
 | # | Labels | Título | Localização | Citação | Diagnóstico | Sugestão | Prioridade | Estado | Issue | Comentários |
 |---|---|---|---|---|---|---|---|---|---|---|

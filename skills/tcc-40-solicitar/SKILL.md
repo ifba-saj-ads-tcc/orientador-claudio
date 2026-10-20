@@ -16,7 +16,8 @@ Leia `contrato/contrato-de-acesso.md` antes de agir. Esta skill **nunca** chama
    - **Citação**: trecho literal curto do texto do aluno, se aplicável.
    - **Diagnóstico**: o problema, em uma frase. Se viola uma regra de
      `normas/conteudo-por-secao.md`, comece pelo código (ex.: `INT-07: hipótese dentro da
-     contextualização`).
+     contextualização`). O código é só para o acompanhamento: na issue, a
+     `tcc-60-sincronizar` o substitui por uma descrição detalhada da regra.
    - **Sugestão**: ação concreta e autocontida (a issue mostra só isso), com passos numerados
      quando fizer sentido.
    - **Prioridade**: alta / média / baixa.
