@@ -1,6 +1,6 @@
 # Etapa 08 — Considerações finais
 
-> Partes do TCC: 6 Considerações finais, 1.7 Organização do trabalho, resumo e abstract.
+> Partes do TCC: 7 Considerações finais, 1.7 Organização do trabalho, resumo e abstract.
 > Regras: CON-01 a CON-04, INT-16, INT-17, RSM-01 a RSM-04 (`normas/conteudo-por-secao.md`).
 
 ## Objetivo

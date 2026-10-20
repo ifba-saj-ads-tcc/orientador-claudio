@@ -31,7 +31,7 @@ flowchart LR
 | 05 Metodologia | 4 Metodologia, 4.1 a 4.5 | Natureza da pesquisa e método definidos, requisitos levantados, ferramentas justificadas e avaliação planejada |
 | 06 Desenvolvimento | 5 Desenvolvimento do software, 5.1 a 5.5 | Requisitos, arquitetura, modelagem, implementação e testes descritos e presentes no código |
 | 07 Resultados | 6 Resultados e avaliação | Avaliação feita como previsto em 4.5, com evidências, discussão e limitações |
-| 08 Considerações | 6 Considerações finais, 1.7 Organização, resumo e abstract | Cada objetivo retomado, hipótese confrontada, organização do trabalho escrita e resumo validado (150 a 500 palavras) |
+| 08 Considerações | 7 Considerações finais, 1.7 Organização, resumo e abstract | Cada objetivo retomado, hipótese confrontada, organização do trabalho escrita e resumo validado (150 a 500 palavras) |
 | 09 Defesa | Documento inteiro | Revisão final aprovada, banca com 15 dias de leitura, apresentação de até 30 minutos |
 
 ## Ciclo de orientação
