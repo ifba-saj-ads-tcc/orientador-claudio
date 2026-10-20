@@ -22,6 +22,10 @@ Diagramas e tabelas completas:
 - [`docs/fluxo-de-uso.md`](docs/fluxo-de-uso.md) — versão Markdown, com diagramas Mermaid
 - [`docs/fluxo-de-uso.html`](docs/fluxo-de-uso.html) — versão HTML, com os diagramas desenhados
   (abra o arquivo no navegador)
+- [`docs/base-de-conhecimento.md`](docs/base-de-conhecimento.md) — tudo num arquivo só, para usar
+  como conhecimento de um Projeto no claude.ai
+- [`docs/instrucoes-projeto.md`](docs/instrucoes-projeto.md) — texto para o campo Instruções do
+  projeto, usado junto com a base de conhecimento
 
 | Skill | Papel |
 |---|---|
