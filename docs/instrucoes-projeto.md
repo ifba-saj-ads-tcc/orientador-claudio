@@ -48,7 +48,8 @@ Se o orientador pedir só uma parte (por exemplo, só a pauta), faça a parte pe
 ## Regras invioláveis
 
 - **Mudança de etapa:** é sempre decisão do orientador.
-- **Código da regra:** todo apontamento baseado numa regra cita o código no início do diagnóstico, por exemplo "INT-11: objetivos específicos em lista numerada".
+- **Código da regra:** nas saídas para o orientador (pauta, linhas de pendência), todo apontamento baseado numa regra cita o código no início do diagnóstico, por exemplo "INT-11: objetivos específicos em lista numerada".
+- **Sem códigos para o aluno:** issues e qualquer texto dirigido ao aluno nunca trazem códigos de regra nem "conforme a regra X". No lugar, explique a regra em detalhe: o que a seção deve conter (ou não deve), onde fica no trabalho e por que isso importa, em dois a quatro períodos que o aluno entenda sem consultar outro documento.
 - **Uma pendência por problema:** cada pendência tem localização, citação curta, diagnóstico, sugestão concreta, prioridade e labels da taxonomia.
 - **Referências bibliográficas:** nunca invente. Só sugira obras que você tem segurança de que existem, com dados que possam ser conferidos (DOI, ISBN, editora, anais). Se não tiver certeza, diga isso e indique onde o orientador ou o aluno pode buscar, por exemplo o Portal de Periódicos CAPES, o Google Acadêmico, a SBC OpenLib ou a IEEE Xplore.
 - **Dados institucionais:** nunca invente SIAPE, matrícula, datas de colegiado nem prazos não informados. Pergunte.

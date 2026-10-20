@@ -43,7 +43,10 @@ repositório, arquivos locais nem GitHub**. Então:
 4. **Nunca inventar referência bibliográfica.** Só indicar obras verificáveis (DOI, ISBN, editora,
    anais, repositório institucional). Se não tiver certeza de que a obra existe ou dos dados dela,
    dizer isso e sugerir onde buscar.
-5. Todo apontamento baseado numa regra da seção 6 cita o **código da regra** (ex.: `INT-11`).
+5. Todo apontamento baseado numa regra da seção 6 cita o **código da regra** (ex.: `INT-11`) nas
+   saídas para o orientador (pauta, linha de pendência). **Nas issues e em qualquer texto para o
+   aluno, nunca use o código nem "conforme a regra X"**: explique a regra em detalhe, com o que a
+   seção deve conter, onde fica no trabalho e por que isso importa.
 6. Não inventar dados institucionais (SIAPE, matrícula, datas de colegiado, prazos não informados).
 7. Citar do texto do aluno só o necessário para localizar o problema.
 
@@ -107,7 +110,7 @@ Regras de cada modo:
   Encerrar muda o status, nunca apaga o aluno. Mudar de etapa não é com este modo, é o passo 20.7.
 - **`tcc-30`**: não inventar duração; registrar fiel ao relatado, sem arredondar para cima.
 - **`tcc-40`**: uma solicitação = uma pendência. Nota pessoal do orientador vai para o Histórico.
-- **`tcc-50`**: sempre citar o código da regra; preferência de estilo do orientador que não é
+- **`tcc-50`**: citar o código da regra nas pendências (uso interno); preferência de estilo do orientador que não é
   regra vai para o Histórico, não para as pendências.
 - **`tcc-60`**: nunca criar duas issues para a mesma pendência; nunca criar issue para pendência
   `rejeitada` ou `n/a`; issue fechada pelo aluno não é confirmada sem a revisão seguinte.
@@ -572,7 +575,8 @@ documento inteiro (estrutura, todas as regras de conteúdo e ABNT).
 ### Como usar
 
 - Cada regra tem um **código** (ex.: `INT-05`). Toda pendência gerada a partir de uma regra cita
-  o código no Diagnóstico, e a issue do aluno mostra o mesmo código.
+  o código no Diagnóstico do acompanhamento. O código é de uso interno: a issue do aluno não o
+  mostra e, no lugar dele, explica a regra em detalhe (o que a seção deve ter, onde e por quê).
 - **Verificação**: `auto` = a skill confere mecanicamente no `.typ` (títulos, ordem, tipo de
   lista, contagem); `leitura` = exige leitura crítica do texto.
 - **Etapa**: etapa de orientação (seção 5) em que a seção é trabalhada. A revisão
@@ -968,7 +972,8 @@ problemas diferentes). As pendências ficam no acompanhamento do aluno e viram i
 dele.
 
 **Campos**: `#`, Labels, Título, Localização (seção e arquivo/linha, ex.: `1.5 · docs/TCC/main.typ:88`),
-Citação (trecho curto), Diagnóstico (começa pelo código da regra, ex.: `INT-11: ...`), Sugestão
+Citação (trecho curto), Diagnóstico (começa pelo código da regra, ex.: `INT-11: ...`; o código é
+interno e não vai para a issue), Sugestão
 (ação concreta e autocontida, com passos numerados quando fizer sentido), Prioridade (alta /
 média / baixa), Estado, Issue, Comentários.
 
@@ -1036,10 +1041,14 @@ fora desse lugar vira pendência `formato` / `prio-media` pedindo a mudança.
 Título: Objetivos específicos em lista numerada
 Labels: cap-introducao, estrutura, prio-alta
 
-**Regra:** INT-11 — Os objetivos específicos devem ser uma lista não numerada (marcador `-` no Typst).
-**Localização:** 1.5 · docs/TCC/main.typ:88
-**Citação:** "1. Levantar requisitos"
-**Diagnóstico:** a lista usa numeração.
+**O que esta parte do TCC precisa ter:** os objetivos específicos ficam na seção 1.5, logo depois do
+objetivo geral, e são escritos como uma lista com marcadores (sem números nem letras). Cada item
+começa com um verbo no infinitivo e descreve um passo que poderá ser verificado nas considerações
+finais. A lista com marcadores deixa claro que os objetivos são metas do trabalho, não etapas em
+sequência.
+**Onde:** 1.5 · docs/TCC/main.typ:88
+**Trecho:** "1. Levantar requisitos"
+**O que encontramos:** a lista de objetivos específicos está numerada.
 **O que fazer:**
 1. Troque `+`/`1.` por `-` em cada item.
 2. Mantenha um verbo no infinitivo por item.

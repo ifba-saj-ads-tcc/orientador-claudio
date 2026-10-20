@@ -18,9 +18,22 @@ acompanhamento; esta skill é o portão entre o acompanhamento e o GitHub.
 - Antes de criar, cheque duplicidade (`gh issue list --repo <repo> --search "in:title <título>"`)
   — nunca crie duas issues para a mesma pendência.
 - Para cada linha `pendente`: `gh issue create --repo <repo> --title "<título>" --label
-  "<labels>" --body "<corpo>"`. O corpo traz, nesta ordem: **Regra** (código e texto da regra em
-  `normas/conteudo-por-secao.md`, quando houver), **Localização**, **Citação**, **Diagnóstico**,
-  **O que fazer** (a Sugestão) e **Prioridade**.
+  "<labels>" --body "<corpo>"`. O corpo traz, nesta ordem:
+  1. **O que esta parte do TCC precisa ter** — quando a pendência vem de uma regra de
+     `normas/conteudo-por-secao.md`, explique a regra com suas palavras, em linguagem para o
+     aluno: o que a seção deve conter (ou não deve), onde fica no trabalho e por que isso
+     importa para o TCC. Dois a quatro períodos, autocontidos: o aluno precisa entender sem
+     consultar nenhum outro documento.
+  2. **Onde** — a Localização.
+  3. **Trecho** — a Citação, quando houver.
+  4. **O que encontramos** — o Diagnóstico, **sem o código da regra**.
+  5. **O que fazer** — a Sugestão, com passos numerados quando fizer sentido.
+  6. **Prioridade**.
+- **Códigos de regra nunca vão para o GitHub.** Os códigos (`EST-`, `INT-`, `REF-`, `COR-`,
+  `MET-`, `DES-`, `RES-`, `CON-`, `RSM-`, `PRE-`, `POS-`) são de uso interno do orientador e
+  ficam só no acompanhamento. Não os coloque no título, no corpo, nos comentários nem como
+  label, e não escreva "conforme a regra X": no lugar da citação, vai a descrição detalhada do
+  item 1. Se o Diagnóstico do acompanhamento começa pelo código, retire-o ao montar a issue.
 - Em sucesso, atualize a linha para `criada #N` com o link; em falha, registre
   `falha: <erro>` sem perder o conteúdo, para tentar de novo.
 - Linhas `rejeitada`: se existir issue aberta correspondente, feche-a. Nunca crie issue para

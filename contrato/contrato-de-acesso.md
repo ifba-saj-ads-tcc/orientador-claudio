@@ -19,6 +19,9 @@ diretamente. Quem transforma isso em issue é sempre a `tcc-60-sincronizar`.
 
 Quando o problema viola uma regra de `normas/conteudo-por-secao.md`, o Diagnóstico da pendência
 começa pelo código da regra (ex.: `INT-11: objetivos específicos em lista numerada`).
+O código é **de uso interno** do orientador: fica no acompanhamento e nunca aparece nas issues.
+Na issue, a regra é explicada ao aluno por uma descrição detalhada, sem código nem citação
+(ver `skills/tcc-60-sincronizar/SKILL.md`).
 
 A estrutura esperada do repositório do aluno (código + `docs/TCC/`) está em
 `contrato/estrutura-repo-aluno.md`. O fluxo de uso das skills está em `docs/fluxo-de-uso.md`.
