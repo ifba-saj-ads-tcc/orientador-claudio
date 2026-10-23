@@ -5,8 +5,9 @@ vários orientandos simultaneamente. Segue o Regimento de TCC do curso e as norm
 (NBR 14724, 6028, 10520, 6023, 6024, 6027).
 
 ## Como funciona, em uma frase
-O repositório de cada aluno (código do projeto + documentação, com o texto Typst do TCC em
-`docs/TCC/`) entra como **submódulo git somente leitura** em `alunos/<slug>/`;
+O repositório de cada aluno (texto Typst do TCC em `docs/`, quando o repositório também tem o
+código do projeto, ou na raiz, quando é só o TCC) entra como **submódulo git somente leitura** em
+`alunos/<slug>/`;
 tudo que o orientador registra fica em `registro/acompanhamento/<slug>.md`; e só a skill
 `tcc-60-sincronizar` conversa com o GitHub do aluno para abrir/fechar issues — evitando
 duplicidade e permitindo trabalhar offline.
@@ -42,7 +43,7 @@ Diagramas e tabelas completas:
 
 ```
 contrato/contrato-de-acesso.md     # regras de escrita, máquina de estados, labels — leitura obrigatória
-contrato/estrutura-repo-aluno.md   # layout do repo do aluno: código + docs/TCC
+contrato/estrutura-repo-aluno.md   # layout do repo do aluno: TCC em docs/ (com código) ou na raiz
 normas/conteudo-por-secao.md       # estrutura recomendada e regras DEVE / NÃO DEVE de cada seção
 normas/normas-abnt-detalhado.md    # checklist das NBR
 etapas/                            # roteiros das etapas 00 Concepção a 09 Defesa
@@ -52,8 +53,9 @@ registro/
   acompanhamento/<slug>.md         # histórico, pendências rastreáveis e leituras, por aluno
 anexos/                            # formulários oficiais do Regimento (a preencher)
 alunos/<slug>/                     # submódulo: repo do aluno (somente leitura)
-  docs/TCC/                        # texto do TCC (Typst)
+  docs/                            # texto do TCC (Typst), se o repo também tem código
   src/ ...                         # código do projeto
+  (ou main.typ na raiz)            # se o repo é só do TCC
 skills/
   tcc-10-cadastrar/                # aceitar e encerrar orientandos
   tcc-20-orientar/                 # sessão de orientação em 7 passos, qualquer etapa
@@ -79,9 +81,9 @@ scripts/
 ## Orientandos migrados do repositório antigo
 `leandro-da-silva-santos` e `pedro-hipolito` vieram da estrutura anterior deste repositório
 (`acompanhamento/` e `.opencode/`). O histórico foi preservado em `registro/acompanhamento/`.
-Os dois repositórios ainda têm o texto do TCC na raiz, por isso estão com `tcc_dir: .` em
-`registro/orientandos.yaml`. Quando cada aluno mover o texto para `docs/TCC/`, troque para
-`tcc_dir: docs/TCC`.
+Os dois repositórios têm o texto do TCC na raiz, por isso estão com `tcc_dir: .` em
+`registro/orientandos.yaml`, o valor certo para repositório só do TCC. Se algum deles juntar o
+código do projeto no mesmo repositório, o texto vai para `docs/` e o valor passa a `tcc_dir: docs`.
 
 ## Créditos de design
 A ideia de submódulos por aluno, o padrão "acompanhamento é fonte do conteúdo / GitHub é
