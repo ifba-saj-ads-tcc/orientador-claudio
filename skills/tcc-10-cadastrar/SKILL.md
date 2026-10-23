@@ -13,8 +13,9 @@ Leia `contrato/contrato-de-acesso.md` antes de agir. Esta skill cria e encerra e
 
 **Aceitar um orientando**
 1. Rode `scripts/adicionar-orientando.sh <slug> <owner/repo> "<Nome>" [branch] [tcc_dir]`.
-   O repositório do aluno deve seguir `contrato/estrutura-repo-aluno.md` (código + `docs/TCC/`);
-   `tcc_dir` só é informado se o texto ainda não estiver em `docs/TCC`.
+   O repositório do aluno deve seguir `contrato/estrutura-repo-aluno.md`: com código do projeto,
+   o TCC fica em `docs/`; só com o TCC, fica na raiz. O script detecta o `tcc_dir` (`docs` ou
+   `.`); informe o 5º argumento só para forçar o valor.
 2. Confirme que a entrada nasceu com `etapa_atual: 00-concepcao` e que
    `registro/acompanhamento/<slug>.md` foi criado a partir do modelo.
 3. Ofereça gerar a Carta de Aceite com a `tcc-80-formularios`.

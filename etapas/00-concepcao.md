@@ -11,7 +11,7 @@ do curso de ADS, com uma estrutura de tópicos e leituras para começar.
 Nesta etapa o passo 20.3 tem quatro atividades, normalmente em sessões diferentes:
 1. **Analisar a proposta inicial** — o que o aluno trouxe: ideia, motivação, recursos disponíveis.
 2. **Direcionar para um TCC** — levar do tema ao problema, delimitar o escopo, apontar riscos.
-3. **Estruturar os tópicos** — propor o sumário do `docs/TCC` a partir da estrutura recomendada em
+3. **Estruturar os tópicos** — propor o sumário do TCC a partir da estrutura recomendada em
    `normas/conteudo-por-secao.md`, adaptado ao tema do aluno.
 4. **Sugerir referências** — leituras para aprofundar cada tópico da estrutura.
 
@@ -29,7 +29,8 @@ Nesta etapa o passo 20.3 tem quatro atividades, normalmente em sessões diferent
 - [ ] Aderência às áreas do curso confirmada
 - [ ] Estrutura de tópicos proposta e combinada com o aluno
 - [ ] Primeiras leituras sugeridas e registradas no acompanhamento
-- [ ] Repositório do aluno no padrão `docs/TCC/` + código (ver `contrato/estrutura-repo-aluno.md`)
+- [ ] Repositório do aluno no padrão: TCC em `docs/` se houver código do projeto, ou na raiz se
+      for só o TCC (ver `contrato/estrutura-repo-aluno.md`)
 
 ## DEVE / NÃO DEVE nesta etapa
 - A estrutura proposta DEVE seguir a ordem de `normas/conteudo-por-secao.md` (EST-01).

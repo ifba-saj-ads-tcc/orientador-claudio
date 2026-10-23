@@ -7,7 +7,7 @@ Nenhuma skill grava fora do que está autorizado aqui.
 
 | Local | Pode escrever? | Skill autorizada |
 |---|---|---|
-| Repo do aluno (`alunos/<slug>/`, submódulo): texto do TCC em `docs/TCC/` e código do projeto | **Nunca** | Nenhuma — sempre somente leitura |
+| Repo do aluno (`alunos/<slug>/`, submódulo): texto do TCC (em `docs/` ou na raiz) e código do projeto | **Nunca** | Nenhuma — sempre somente leitura |
 | `registro/acompanhamento/<slug>.md` | Sim | `tcc-20-orientar`, `tcc-30-frequencia`, `tcc-40-solicitar`, `tcc-50-revisar`, `tcc-60-sincronizar` (estado e comentários das issues) |
 | Issues no GitHub do aluno | Sim, **só uma skill** | `tcc-60-sincronizar` — nenhuma outra skill chama `gh issue create/edit/close/comment` |
 | `registro/orientandos.yaml` — entradas novas, `status`, dados do aluno | Sim | `tcc-10-cadastrar` |
@@ -23,7 +23,8 @@ O código é **de uso interno** do orientador: fica no acompanhamento e nunca ap
 Na issue, a regra é explicada ao aluno por uma descrição detalhada, sem código nem citação
 (ver `skills/tcc-60-sincronizar/SKILL.md`).
 
-A estrutura esperada do repositório do aluno (código + `docs/TCC/`) está em
+A estrutura esperada do repositório do aluno (TCC em `docs/` com código do projeto, ou na raiz
+quando é só o TCC) está em
 `contrato/estrutura-repo-aluno.md`. O fluxo de uso das skills está em `docs/fluxo-de-uso.md`.
 
 ## Mudança de etapa

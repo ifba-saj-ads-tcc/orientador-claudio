@@ -192,7 +192,7 @@ do curso de ADS, com uma estrutura de tópicos e leituras para começar.
 Nesta etapa o passo 20.3 tem quatro atividades, normalmente em sessões diferentes:
 1. **Analisar a proposta inicial** — o que o aluno trouxe: ideia, motivação, recursos disponíveis.
 2. **Direcionar para um TCC** — levar do tema ao problema, delimitar o escopo, apontar riscos.
-3. **Estruturar os tópicos** — propor o sumário do `docs/TCC` a partir da estrutura recomendada em
+3. **Estruturar os tópicos** — propor o sumário do TCC a partir da estrutura recomendada em
    a seção 6 deste documento, adaptado ao tema do aluno.
 4. **Sugerir referências** — leituras para aprofundar cada tópico da estrutura.
 
@@ -210,7 +210,8 @@ Nesta etapa o passo 20.3 tem quatro atividades, normalmente em sessões diferent
 - [ ] Aderência às áreas do curso confirmada
 - [ ] Estrutura de tópicos proposta e combinada com o aluno
 - [ ] Primeiras leituras sugeridas e registradas no acompanhamento
-- [ ] Repositório do aluno no padrão `docs/TCC/` + código (ver o padrão do repositório do aluno (seção 8))
+- [ ] Repositório do aluno no padrão: TCC em `docs/` se houver código do projeto, ou na raiz se
+      for só o TCC (ver o padrão do repositório do aluno (seção 8))
 
 #### DEVE / NÃO DEVE nesta etapa
 - A estrutura proposta DEVE seguir a ordem de a seção 6 deste documento (EST-01).
@@ -971,7 +972,7 @@ Cada problema que o aluno precisa corrigir vira **uma pendência** (uma linha; n
 problemas diferentes). As pendências ficam no acompanhamento do aluno e viram issues no GitHub
 dele.
 
-**Campos**: `#`, Labels, Título, Localização (seção e arquivo/linha, ex.: `1.5 · docs/TCC/main.typ:88`),
+**Campos**: `#`, Labels, Título, Localização (seção e arquivo/linha, ex.: `1.5 · docs/main.typ:88`),
 Citação (trecho curto), Diagnóstico (começa pelo código da regra, ex.: `INT-11: ...`; o código é
 interno e não vai para a issue), Sugestão
 (ação concreta e autocontida, com passos numerados quando fizer sentido), Prioridade (alta /
@@ -1007,9 +1008,12 @@ pendente ──► criada #N ──► corrigida aguardando validação ──�
 Uso típico: `abnt` para formatação, `estrutura` para regras EST e para a proposta de sumário,
 `codigo` para DES-07 (texto que não confere com o código), `fonte` para leituras sugeridas.
 
-**Repositório do aluno.** Código do projeto e documentação no mesmo repositório; o texto do TCC
-(Typst, template do curso) fica em `docs/TCC/` (`main.typ`, `referencias.bib`, `assets/`). Texto
-fora desse lugar vira pendência `formato` / `prio-media` pedindo a mudança.
+**Repositório do aluno.** O texto do TCC (Typst, template do curso: `main.typ`, `capitulos/`,
+`referencias.bib`, `assets/`) fica:
+- na pasta `docs/`, quando o repositório tem também o código do projeto (código fora de `docs/`);
+- na raiz, quando o repositório é só do TCC.
+
+Texto fora desses lugares vira pendência `formato` / `prio-media` pedindo a mudança.
 
 ---
 
@@ -1032,7 +1036,7 @@ fora desse lugar vira pendência `formato` / `prio-media` pedindo a mudança.
 **Linha de pendência (para o acompanhamento)**
 
 ```markdown
-| 12 | `cap-introducao`, `estrutura`, `prio-alta` | Objetivos específicos em lista numerada | 1.5 · docs/TCC/main.typ:88 | "1. Levantar requisitos" | INT-11: objetivos específicos devem ser lista não numerada | 1. Troque `+`/`1.` por `-` em cada item. 2. Mantenha um verbo no infinitivo por item. | alta | pendente | | |
+| 12 | `cap-introducao`, `estrutura`, `prio-alta` | Objetivos específicos em lista numerada | 1.5 · docs/main.typ:88 | "1. Levantar requisitos" | INT-11: objetivos específicos devem ser lista não numerada | 1. Troque `+`/`1.` por `-` em cada item. 2. Mantenha um verbo no infinitivo por item. | alta | pendente | | |
 ```
 
 **Issue (modo `tcc-60-sincronizar`)**
@@ -1046,7 +1050,7 @@ objetivo geral, e são escritos como uma lista com marcadores (sem números nem 
 começa com um verbo no infinitivo e descreve um passo que poderá ser verificado nas considerações
 finais. A lista com marcadores deixa claro que os objetivos são metas do trabalho, não etapas em
 sequência.
-**Onde:** 1.5 · docs/TCC/main.typ:88
+**Onde:** 1.5 · docs/main.typ:88
 **Trecho:** "1. Levantar requisitos"
 **O que encontramos:** a lista de objetivos específicos está numerada.
 **O que fazer:**
@@ -1076,7 +1080,7 @@ sequência.
   aluno: João Silva
   repo: usuario/tcc-joao-silva
   branch: main
-  tcc_dir: docs/TCC
+  tcc_dir: docs              # ou . se o repositório for só do TCC
   etapa_atual: 00-concepcao
   status: em andamento
   ultima_atualizacao: 2026-10-01

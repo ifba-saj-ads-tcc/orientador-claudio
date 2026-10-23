@@ -12,7 +12,7 @@ Leia `contrato/contrato-de-acesso.md` antes de agir. Esta skill **nunca** chama
 1. Resolva o `slug` do aluno.
 2. Monte a linha da pendência com todos os campos da tabela "Pendências rastreáveis":
    - **Localização**: seção e arquivo/linha, o mais específico possível
-     (ex.: `1.5 · docs/TCC/main.typ:88`).
+     (ex.: `1.5 · docs/main.typ:88`, ou `1.5 · main.typ:88` se o TCC está na raiz).
    - **Citação**: trecho literal curto do texto do aluno, se aplicável.
    - **Diagnóstico**: o problema, em uma frase. Se viola uma regra de
      `normas/conteudo-por-secao.md`, comece pelo código (ex.: `INT-07: hipótese dentro da

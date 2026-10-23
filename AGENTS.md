@@ -2,7 +2,8 @@
 
 - Antes de qualquer ação, leia `contrato/contrato-de-acesso.md` e
   `contrato/estrutura-repo-aluno.md`. As skills ficam em `skills/<nome>/SKILL.md`.
-- `alunos/<slug>/` são submódulos com o repositório de cada aluno (código + `docs/TCC/`). São
+- `alunos/<slug>/` são submódulos com o repositório de cada aluno (TCC em `docs/` junto do código
+  do projeto, ou na raiz quando o repositório é só do TCC). São
   **somente leitura**.
 
 ## Pasta `.temp/` — arquivos temporários

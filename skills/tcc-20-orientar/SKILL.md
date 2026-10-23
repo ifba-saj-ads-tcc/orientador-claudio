@@ -15,7 +15,8 @@ O fluxo completo, com diagramas, está em `docs/fluxo-de-uso.md`.
 
 ### 20.1 Preparar
 1. Resolva o `slug` do aluno (ver contrato).
-2. Leia em `registro/orientandos.yaml` a `etapa_atual` e o `tcc_dir` (padrão `docs/TCC`).
+2. Leia em `registro/orientandos.yaml` a `etapa_atual` e o `tcc_dir` (`docs` se o repositório tem
+   código do projeto + TCC; `.` se é só o TCC).
 3. Leia o roteiro da etapa em `etapas/NN-*.md`: seções do TCC, checklist, DEVE / NÃO DEVE.
 4. Leia `registro/acompanhamento/<slug>.md`: pendências abertas, histórico recente, leituras
    sugeridas.
@@ -47,7 +48,8 @@ pesquisa candidata, o que fica dentro e fora do escopo, riscos.
 `normas/conteudo-por-secao.md`, adaptando os títulos das seções ao tema do aluno sem mudar a
 ordem nem o papel de cada seção. Para cada seção, uma linha do que ela deve conter para este
 TCC. A estrutura vai ao aluno como **uma pendência** com labels `cap-proposta`, `estrutura`,
-`prio-alta`, pedindo que ele crie os títulos em `docs/TCC/`. Nunca escreva no repositório do aluno.
+`prio-alta`, pedindo que ele crie os títulos no texto do TCC (em `docs/` ou na raiz, conforme
+`contrato/estrutura-repo-aluno.md`). Nunca escreva no repositório do aluno.
 
 **Sugerir referências** — para cada tópico da estrutura (ou para o capítulo que está começando),
 sugira de 2 a 5 leituras:

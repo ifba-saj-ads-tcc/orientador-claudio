@@ -1,6 +1,6 @@
 ---
 name: tcc-50-revisar
-description: Revisa o TCC (Typst em docs/TCC do repositório do aluno) contra a estrutura recomendada e as regras DEVE / NÃO DEVE de cada seção (normas/conteudo-por-secao.md) e contra as normas ABNT (NBR 14724, 6028, 10520, 6023, 6024, 6027). É chamada pela tcc-20-orientar em toda sessão (passo 20.2), em todas as etapas de 00 a 09, e também pode ser chamada direto quando o orientador pedir para "revisar", "checar a formatação" ou "revisar o ABNT".
+description: Revisa o TCC (Typst no repositório do aluno: em docs/ quando o repositório tem o código do projeto, ou na raiz quando é só o TCC) contra a estrutura recomendada e as regras DEVE / NÃO DEVE de cada seção (normas/conteudo-por-secao.md) e contra as normas ABNT (NBR 14724, 6028, 10520, 6023, 6024, 6027). É chamada pela tcc-20-orientar em toda sessão (passo 20.2), em todas as etapas de 00 a 09, e também pode ser chamada direto quando o orientador pedir para "revisar", "checar a formatação" ou "revisar o ABNT".
 ---
 
 # tcc-50-revisar
@@ -15,7 +15,7 @@ A revisão acontece em **toda sessão** de orientação. O escopo depende da `et
 
 | Etapa | O que revisar |
 |---|---|
-| 00 | A proposta inicial: tema, problema candidato, escopo. Se já houver `docs/TCC`, só as regras EST |
+| 00 | A proposta inicial: tema, problema candidato, escopo. Se o texto já existir, só as regras EST |
 | 01 a 08 | As seções da etapa (ver `etapas/NN-*.md`), com todas as regras delas, **mais** as regras `auto` de todas as seções que já existem no texto |
 | 08 | Também o resumo e o abstract (RSM-01 a RSM-04 e NBR 6028) — não deixar para a 09 |
 | 09 | O documento inteiro: todas as regras de conteúdo, PRE, POS e a ABNT completa |
@@ -26,7 +26,7 @@ seções fora de ordem (EST-01).
 
 ## Fluxo de trabalho
 1. Resolva o `slug`, atualize `alunos/<slug>/` (`git submodule update`) e localize
-   `alunos/<slug>/<tcc_dir>/main.typ` (padrão `docs/TCC/`). Se não estiver lá, siga
+   `alunos/<slug>/<tcc_dir>/main.typ` (`docs/` ou raiz). Se não estiver lá, siga
    "Repositório fora do padrão" em `contrato/estrutura-repo-aluno.md`.
 2. **Estrutura (EST).** Extraia os títulos (`=`, `==`, `===`) e compare com a estrutura
    recomendada: ordem, seções ausentes, seção de um capítulo dentro de outro, seções vazias,
@@ -53,7 +53,7 @@ seções fora de ordem (EST-01).
    média. Label `cap-correlatos`.
 5. **Registrar.** Para cada problema, uma linha de pendência em
    `registro/acompanhamento/<slug>.md`, seção 3 (mesmo formato da `tcc-40-solicitar`):
-   Localização (`docs/TCC/main.typ:120`), Citação curta, Diagnóstico começando pelo código da
+   Localização (`docs/main.typ:120` ou `main.typ:120`), Citação curta, Diagnóstico começando pelo código da
    regra (ex.: `INT-11: ...`), Sugestão com ação concreta, Prioridade, Labels (capítulo +
    natureza; `abnt` para formatação, `estrutura` para EST, `codigo` para DES-07), Estado
    `pendente`. Não duplique pendência que já existe aberta — atualize a existente.

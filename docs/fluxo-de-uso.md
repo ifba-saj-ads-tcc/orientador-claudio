@@ -49,7 +49,7 @@ flowchart TD
     B1["Sessão de orientação<br/>tcc-20-orientar<br/>passos 20.1 a 20.7, revisa com tcc-50"]
     B2["Registrar o encontro<br/>tcc-30-frequencia"]
     B3["Publicar pendências<br/>tcc-60-sincronizar<br/>vira issue no GitHub; pedidos avulsos: tcc-40"]
-    B4(["Aluno escreve e corrige<br/>docs/TCC + código, responde nas issues"])
+    B4(["Aluno escreve e corrige<br/>texto do TCC + código, responde nas issues"])
     B5["Trazer o retorno<br/>tcc-60-sincronizar"]
     D{"Mudar de etapa?<br/>você decide"}
   end
@@ -87,7 +87,7 @@ passo 20.3 muda conforme a etapa.
 
 ```mermaid
 flowchart TD
-  P1["20.1 Preparar<br/>etapa atual, roteiro da etapa, pendências abertas,<br/>docs/TCC e código"]
+  P1["20.1 Preparar<br/>etapa atual, roteiro da etapa, pendências abertas,<br/>texto do TCC e código"]
   P2["20.2 Revisar, sempre<br/>tcc-50-revisar<br/>checklist da etapa, DEVE / NÃO DEVE, ABNT"]
   P3["20.3 Trabalhar a etapa<br/>00: analisar a proposta, direcionar para TCC,<br/>estruturar tópicos, sugerir referências<br/>01 a 08: acompanhar o capítulo da etapa,<br/>referências em capítulo novo, ajustar estrutura<br/>09: preparar a defesa"]
   P4["20.4 Montar a pauta<br/>o que está pronto, perguntas, pendências novas"]
@@ -107,7 +107,7 @@ flowchart TD
 
 | Passo | O que faz | O que sai dele |
 |---|---|---|
-| 20.1 Preparar | Lê a etapa atual do aluno, o roteiro da etapa, as pendências abertas e o repositório (`docs/TCC` e código) | Contexto da sessão |
+| 20.1 Preparar | Lê a etapa atual do aluno, o roteiro da etapa, as pendências abertas e o repositório (texto do TCC, em `docs/` ou na raiz, e código) | Contexto da sessão |
 | 20.2 Revisar | Chama a `tcc-50-revisar` sobre a parte do TCC da etapa: checklist, o que cada seção deve e não deve ter, e ABNT. Nunca é pulado | Lista do que está certo e do que precisa corrigir |
 | 20.3 Trabalhar a etapa | Na 00: analisa a proposta, direciona para TCC, estrutura os tópicos e sugere referências. Nas 01 a 08: acompanha o capítulo da etapa, sugere referências quando começa capítulo novo e ajusta a estrutura se preciso. Na 09: prepara a defesa | Orientações e sugestões para o aluno |
 | 20.4 Montar a pauta | Junta o que está pronto, as perguntas para a reunião e as pendências novas | Pauta da reunião |
