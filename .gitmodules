@@ -6,3 +6,6 @@
 	path = alunos/pedro-hipolito
 	url = https://github.com/ifba-saj-ads-tcc/tcc-pedro-hipolito-orientador.git
 	branch = main
+[submodule "typst-template"]
+	path = typst-template
+	url = https://github.com/ifba-saj-ads-tcc/typst-template
