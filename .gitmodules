@@ -1,7 +1,3 @@
-[submodule "alunos/leandro-da-silva-santos"]
-	path = alunos/leandro-da-silva-santos
-	url = https://github.com/ifba-saj-ads-tcc/LEANDRO-DA-SILVA-SANTOS.git
-	branch = main
 [submodule "alunos/pedro-hipolito"]
 	path = alunos/pedro-hipolito
 	url = https://github.com/ifba-saj-ads-tcc/tcc-pedro-hipolito-orientador.git
@@ -9,3 +5,19 @@
 [submodule "typst-template"]
 	path = typst-template
 	url = https://github.com/ifba-saj-ads-tcc/typst-template
+[submodule "alunos/anderson-guilherme"]
+	path = alunos/anderson-guilherme
+	url = https://github.com/GuilhermeMoraesTV/typst-template--TCC.git
+	branch = main
+[submodule "alunos/luis-guilherme"]
+	path = alunos/luis-guilherme
+	url = https://github.com/LuisPassosRamos/tcc2026.git
+	branch = main
+[submodule "alunos/leandro-da-silva-santos"]
+	path = alunos/leandro-da-silva-santos
+	url = https://github.com/LeandroSanttos/typst-template.git
+	branch = main
+[submodule "alunos/luis-miguel"]
+	path = alunos/luis-miguel
+	url = https://github.com/LuisMiguelADS/template-tcc.git
+	branch = main

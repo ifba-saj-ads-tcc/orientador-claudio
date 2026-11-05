@@ -8,6 +8,7 @@ REPO="$2"          # ex.: seuusuario/tcc-joao-silva
 ALUNO="$3"         # ex.: "João Silva"
 BRANCH="${4:-main}"
 TCC_DIR="${5:-}"   # opcional: docs (código + TCC) ou . (só o TCC); detectado se omitido
+MATRICULA="${6:-}" # opcional: matrícula do aluno (string, preserva zeros à esquerda); nunca invente
 
 git submodule add -b "$BRANCH" "https://github.com/${REPO}.git" "alunos/${SLUG}"
 
@@ -28,10 +29,18 @@ elif [ ! -f "alunos/${SLUG}/${TCC_DIR}/main.typ" ]; then
   echo "Aviso: alunos/${SLUG}/${TCC_DIR}/main.typ não encontrado." >&2
 fi
 
+if [ -n "$MATRICULA" ]; then
+  MATRICULA_LINHA="  matricula: \"${MATRICULA}\""
+else
+  MATRICULA_LINHA='  matricula: ""                        # a preencher: nunca invente a matrícula'
+  echo "Aviso: matrícula não informada; registrada vazia. Peça a matrícula ao aluno antes de emitir formulários." >&2
+fi
+
 cat >> registro/orientandos.yaml << EOY
 
 - slug: ${SLUG}
   aluno: ${ALUNO}
+${MATRICULA_LINHA}
   repo: ${REPO}
   branch: ${BRANCH}
   tcc_dir: ${TCC_DIR}

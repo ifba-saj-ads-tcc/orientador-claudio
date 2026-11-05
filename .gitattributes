@@ -1,0 +1,6 @@
+# Scripts shell precisam de LF no working copy: bash (inclusive o do WSL no Windows)
+# não aceita CRLF — `set -euo pipefail\r` quebra na primeira linha.
+*.sh text eol=lf
+
+# Demais arquivos de texto: normalização padrão do Git.
+* text=auto
