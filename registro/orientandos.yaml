@@ -8,27 +8,64 @@
 # Formato de uma entrada:
 # - slug: joao-silva
 #   aluno: João Silva
+#   matricula: "2026123456"             # matrícula do aluno, string (preserva zeros à esquerda)
 #   repo: seuusuario/tcc-joao-silva      # owner/repo, formato aceito pelo gh
 #   branch: main
 #   tcc_dir: docs                        # docs (código + TCC) ou . (só o TCC, na raiz)
 #   etapa_atual: 04-referencial-teorico  # nome de arquivo em etapas/, sem .md (00 a 09)
 #   status: em andamento
 #   ultima_atualizacao: 2026-09-20
+#
+# A matrícula é obrigatória no cadastro e é dado cadastral do aluno: registrada e corrigida pela
+# tcc-10-cadastrar. Nunca invente nem deduza a matrícula — pergunte. Entradas antigas com
+# matricula: "" estão pendentes de preenchimento.
 
 - slug: leandro-da-silva-santos
   aluno: Leandro da Silva Santos
-  repo: ifba-saj-ads-tcc/LEANDRO-DA-SILVA-SANTOS
+  matricula: "20221TADSSAJ0015"
+  repo: LeandroSanttos/typst-template
   branch: main
   tcc_dir: .                           # repositório só com o TCC: texto na raiz
   etapa_atual: 04-referencial-teorico
   status: em andamento
-  ultima_atualizacao: 2026-08-28
+  ultima_atualizacao: 2026-11-05
 
 - slug: pedro-hipolito
   aluno: Pedro Victor Hipólito Cabral
+  matricula: "20222TADSSAJ0010"
   repo: ifba-saj-ads-tcc/tcc-pedro-hipolito-orientador
   branch: main
   tcc_dir: .                           # repositório só com o TCC: texto na raiz
   etapa_atual: 09-defesa
   status: em andamento
-  ultima_atualizacao: 2026-09-08
+  ultima_atualizacao: 2026-11-05
+
+- slug: anderson-guilherme
+  aluno: Anderson Guilherme Santana Moraes
+  matricula: "20222TADSSAJ0033"
+  repo: GuilhermeMoraesTV/typst-template--TCC
+  branch: main
+  tcc_dir: .                           # repositório só com o TCC: texto na raiz
+  etapa_atual: 00-concepcao
+  status: em andamento
+  ultima_atualizacao: 2026-11-05
+
+- slug: luis-guilherme
+  aluno: Luis Guilherme Passos Ramos
+  matricula: "20222TADSSAJ0015"
+  repo: LuisPassosRamos/tcc2026
+  branch: main
+  tcc_dir: .                           # repositório só com o TCC: texto na raiz
+  etapa_atual: 00-concepcao
+  status: em andamento
+  ultima_atualizacao: 2026-11-05
+
+- slug: luis-miguel
+  aluno: Luís Miguel de Jesus Oliveira
+  matricula: "20211TADSSAJ0005"
+  repo: LuisMiguelADS/template-tcc
+  branch: main
+  tcc_dir: .                           # repositório só com o TCC: texto na raiz
+  etapa_atual: 00-concepcao
+  status: em andamento
+  ultima_atualizacao: 2026-11-05

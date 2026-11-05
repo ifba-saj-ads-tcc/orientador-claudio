@@ -42,6 +42,7 @@ Diagramas e tabelas completas:
 ## Estrutura
 
 ```
+opencode.json                      # registra skills/ como fonte de skills do OpenCode
 contrato/contrato-de-acesso.md     # regras de escrita, máquina de estados, labels — leitura obrigatória
 contrato/estrutura-repo-aluno.md   # layout do repo do aluno: TCC em docs/ (com código) ou na raiz
 normas/conteudo-por-secao.md       # estrutura recomendada e regras DEVE / NÃO DEVE de cada seção
@@ -49,7 +50,7 @@ normas/normas-abnt-detalhado.md    # checklist das NBR
 etapas/                            # roteiros das etapas 00 Concepção a 09 Defesa
 docs/fluxo-de-uso.md|.html         # fluxo de uso das skills, com diagramas
 registro/
-  orientandos.yaml                 # fonte única de verdade: quem, repo, etapa atual
+  orientandos.yaml                 # fonte única de verdade: quem, matrícula, repo, etapa atual
   acompanhamento/<slug>.md         # histórico, pendências rastreáveis e leituras, por aluno
 anexos/                            # formulários oficiais do Regimento (a preencher)
 alunos/<slug>/                     # submódulo: repo do aluno (somente leitura)
@@ -69,6 +70,23 @@ scripts/
   adicionar-orientando.sh          # cria submódulo + entrada no registro + acompanhamento (aceita tcc_dir)
   atualizar-orientandos.sh         # git submodule update --remote em todos os alunos
 ```
+
+## Skills no OpenCode
+
+O `opencode.json` na raiz registra `./skills` como fonte de skills:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": ["./skills"]
+}
+```
+
+Assim o OpenCode descobre cada `skills/<nome>/SKILL.md` pelo ID igual ao nome da pasta (por
+exemplo `tcc-20-orientar`) e o agente pode carregá-las sob demanda. Para criar uma skill nova,
+basta adicionar `skills/<nome>/SKILL.md` com `name` e `description` no frontmatter — nenhuma
+mudança de configuração é necessária. Os caminhos citados dentro das skills (`contrato/`,
+`scripts/`, `registro/`…) são relativos à raiz deste repositório.
 
 ## Pendente de validação
 - `normas/normas-abnt-detalhado.md`: baseado em pesquisa das normas oficiais, mas ainda não

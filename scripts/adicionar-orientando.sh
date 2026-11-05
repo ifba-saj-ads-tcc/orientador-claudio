@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Adiciona um novo orientando: cria o submódulo, a entrada em orientandos.yaml
 # e o acompanhamento a partir do modelo.
+#
+# Uso: adicionar-orientando.sh <slug> <owner/repo> "<Nome>" [branch] [tcc_dir] <matricula>
+#   A matrícula é obrigatória (string). Para não forçar o tcc_dir, passe "" no 5º argumento.
 set -euo pipefail
 
 SLUG="$1"          # ex.: joao-silva
@@ -8,7 +11,15 @@ REPO="$2"          # ex.: seuusuario/tcc-joao-silva
 ALUNO="$3"         # ex.: "João Silva"
 BRANCH="${4:-main}"
 TCC_DIR="${5:-}"   # opcional: docs (código + TCC) ou . (só o TCC); detectado se omitido
-MATRICULA="${6:-}" # opcional: matrícula do aluno (string, preserva zeros à esquerda); nunca invente
+MATRICULA="${6:-}" # obrigatória: matrícula do aluno (string, preserva zeros à esquerda); nunca invente
+
+if [ -z "$MATRICULA" ]; then
+  echo "Erro: a matrícula do aluno é obrigatória no cadastro." >&2
+  echo "Uso: $0 <slug> <owner/repo> \"<Nome>\" [branch] [tcc_dir] <matricula>" >&2
+  echo "     Para não forçar o tcc_dir, passe \"\" no 5º argumento." >&2
+  echo "     Pergunte a matrícula ao aluno: nunca invente nem deduza." >&2
+  exit 1
+fi
 
 git submodule add -b "$BRANCH" "https://github.com/${REPO}.git" "alunos/${SLUG}"
 
@@ -29,12 +40,7 @@ elif [ ! -f "alunos/${SLUG}/${TCC_DIR}/main.typ" ]; then
   echo "Aviso: alunos/${SLUG}/${TCC_DIR}/main.typ não encontrado." >&2
 fi
 
-if [ -n "$MATRICULA" ]; then
-  MATRICULA_LINHA="  matricula: \"${MATRICULA}\""
-else
-  MATRICULA_LINHA='  matricula: ""                        # a preencher: nunca invente a matrícula'
-  echo "Aviso: matrícula não informada; registrada vazia. Peça a matrícula ao aluno antes de emitir formulários." >&2
-fi
+MATRICULA_LINHA="  matricula: \"${MATRICULA}\""
 
 cat >> registro/orientandos.yaml << EOY
 

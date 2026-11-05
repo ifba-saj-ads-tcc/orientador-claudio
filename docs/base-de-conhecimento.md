@@ -1075,9 +1075,12 @@ sequência.
 
 **Registro de novo orientando (modo `tcc-10-cadastrar`)**
 
+`matricula` é obrigatória (string) e nunca pode ser inventada: sem ela, o cadastro não é feito.
+
 ```yaml
 - slug: joao-silva
   aluno: João Silva
+  matricula: "2026123456"
   repo: usuario/tcc-joao-silva
   branch: main
   tcc_dir: docs              # ou . se o repositório for só do TCC

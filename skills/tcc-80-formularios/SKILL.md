@@ -6,8 +6,8 @@ description: Ajuda o orientador a preencher os formulários oficiais do Regiment
 # tcc-80-formularios
 
 Leia `contrato/contrato-de-acesso.md`. Esta skill lê `registro/orientandos.yaml` e
-`registro/acompanhamento/<slug>.md` para pré-preencher o que já se sabe (nome, repositório,
-etapas, horas de orientação) e pergunta ao orientador só o que falta (SIAPE, matrícula, banca).
+`registro/acompanhamento/<slug>.md` para pré-preencher o que já se sabe (nome, matrícula,
+repositório, etapas, horas de orientação) e pergunta ao orientador só o que falta (SIAPE, banca).
 
 ## Fluxo de trabalho
 1. Identifique o formulário necessário (modelos em `anexos/`, quando existirem).
