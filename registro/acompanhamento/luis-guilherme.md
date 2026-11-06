@@ -25,7 +25,8 @@
 
 | Data | Etapa/Tópico | Decisões | Próximos passos |
 |---|---|---|---|
-| | | | |
+| 2026-11-05 | Revisão 20.2 — etapa 00 (pré-reunião) | O repositório é **o template do curso sem nenhuma edição do aluno**: últimos commits são da organização do template (2026-10-23), `main.typ` ainda com título/autor/banca de exemplo, todos os capítulos com caixas `#orientacao` e `#lorem`, resumo e abstract de exemplo. Não há proposta inicial para analisar. Estrutura de títulos, porém, está conforme EST-01. | Aluno precisa colocar a proposta inicial no repositório; reunião depende do tema. |
+| 2026-11-05 | Correção de registro — codificação | A observação de que "a cópia do template está em dupla codificação" era **falso positivo**: a checagem contava qualquer `Ã` como corrupção, e `Ã` é legítimo em "NÃO DEVE" nas caixas de orientação. Verificação byte a byte: **0 ocorrências** de dupla codificação no repositório inteiro. Pendência 2 marcada como `rejeitada`. | Nenhuma ação do aluno. |
 
 ## 3. Pendências rastreáveis
 
@@ -36,7 +37,8 @@
 
 | # | Labels | Título | Localização | Citação | Diagnóstico | Sugestão | Prioridade | Estado | Issue | Comentários |
 |---|---|---|---|---|---|---|---|---|---|---|
-| | | | | | | | | pendente | | |
+| 1 | `cap-proposta` `estrutura` `entregavel` | Proposta inicial não está no repositório | `main.typ:21` (também `capitulos/01-introducao.typ:43`) | "titulo: \"Título do Trabalho de Conclusão de Curso\"" | EST-04: todas as seções estão com placeholder do template (`#lorem`, caixas `#orientacao`, banca e ficha catalográfica de exemplo). Não existe texto do aluno em nenhum arquivo, então a etapa 00 não tem proposta para analisar. | Escrever a proposta inicial no capítulo 1 (tema, problema como pergunta, escopo e justificativa) ou colar o pré-projeto da disciplina de Projeto de Inovação; preencher `titulo`, `autor` e `orientador` no `main.typ`. | alta | pendente | | Último commit do repositório é do template (2026-10-23), não do aluno. |
+| 2 | `formato` | Acentos corrompidos em todo o template (mojibake) | `main.typ:21` (também `capitulos/*.typ`, `pre-textuais/resumo.typ`, `ifbasaj-tcc/layout.typ`) | "= Introdução <cap-introducao>" | **Falso positivo** (corrigido em 2026-11-05). A checagem contava qualquer `Ã` como corrupção, e `Ã` aparece legitimamente em "NÃO DEVE" nas caixas de orientação do template. Verificação byte a byte com o padrão de dupla codificação deu **0 ocorrências** no repositório inteiro. | Nada a corrigir. | alta | rejeitada | | Erro de detecção do orientador, não do aluno. Os arquivos estão em UTF-8 correto. |
 
 ## 4. Leituras sugeridas
 
@@ -47,4 +49,4 @@
 |---|---|---|---|---|
 | | | | | sugerida |
 
-Atualizado em: —
+Atualizado em: 2026-11-05
